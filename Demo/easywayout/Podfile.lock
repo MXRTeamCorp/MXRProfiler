@@ -1,0 +1,77 @@
+PODS:
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
+    - AFNetworking/NSURLSession
+  - BaiduMapKit (3.1.0)
+  - FBAllocationTracker (0.1.5)
+  - FBMemoryProfiler (0.1.3):
+    - FBAllocationTracker (~> 0.1)
+    - FBRetainCycleDetector (~> 0.1)
+  - FBRetainCycleDetector (0.1.3)
+  - FMDB (2.6.2):
+    - FMDB/standard (= 2.6.2)
+  - FMDB/standard (2.6.2)
+  - LKDBHelper (2.4):
+    - FMDB
+  - Masonry (1.0.2)
+  - MBProgressHUD (1.0.0)
+  - RealReachability (1.1.8):
+    - RealReachability/Connection (= 1.1.8)
+    - RealReachability/Ping (= 1.1.8)
+  - RealReachability/Connection (1.1.8)
+  - RealReachability/Ping (1.1.8)
+  - SDWebImage (3.8.2):
+    - SDWebImage/Core (= 3.8.2)
+  - SDWebImage/Core (3.8.2)
+  - SVProgressHUD (2.0.4)
+  - UITableView+FDTemplateLayoutCell (1.4)
+  - YYKit (1.0.9):
+    - YYKit/no-arc (= 1.0.9)
+  - YYKit/no-arc (1.0.9)
+
+DEPENDENCIES:
+  - AFNetworking (~> 3.1.0)
+  - BaiduMapKit (~> 3.1.0)
+  - FBAllocationTracker (~> 0.1.5)
+  - FBMemoryProfiler (~> 0.1.3)
+  - FBRetainCycleDetector
+  - LKDBHelper (~> 2.4)
+  - Masonry (~> 1.0.2)
+  - MBProgressHUD (~> 1.0.0)
+  - RealReachability (~> 1.1.8)
+  - SDWebImage (~> 3.8.2)
+  - SVProgressHUD (~> 2.0.4)
+  - UITableView+FDTemplateLayoutCell (~> 1.4)
+  - YYKit (~> 1.0.9)
+
+SPEC CHECKSUMS:
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  BaiduMapKit: 4cfaedb118cff7e157e9771859a4bf65a261b2a1
+  FBAllocationTracker: dfdca3f71aceca6a85e95e3c6ec76a9785eba0f1
+  FBMemoryProfiler: 623fc5f8a61f7d02ec75c87e3b97c90f621d8b02
+  FBRetainCycleDetector: f0c7b290bf48ae77f6ae060843ce34ae341781eb
+  FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
+  LKDBHelper: 1162892ca4ffc28029070d6f40f57b333133f1c4
+  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  RealReachability: e6c8a2bbffa316006e8c282efc1ee2567d61a920
+  SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
+  SVProgressHUD: bfde85ed6c573ea802b9cb37894ed9b629034f1b
+  UITableView+FDTemplateLayoutCell: 234e1582bcc4e18461af91155123bb96538ed030
+  YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
+
+PODFILE CHECKSUM: e7d3452ba1d03b6cb9e1f460720d6edb1f2a1a5a
+
+COCOAPODS: 1.1.1

@@ -1,0 +1,24 @@
+//
+//  easywayout-Prefix.pch
+//  easywayout
+//
+//  Created by Martin.Liu on 2017/1/1.
+//  Copyright © 2017年 MAIERSI. All rights reserved.
+//
+
+#ifndef easywayout_Prefix_pch
+#define easywayout_Prefix_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import <Availability.h>
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import "MARAPPMacro.h"
+
+#endif
+#endif /* easywayout_Prefix_pch */
+#import "MARAPPMacro.h"
