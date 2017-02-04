@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
                    DESC
   s.homepage     = "https://github.com/MXRTeamCorp/MXRProfiler.git"
   s.license      = "MIT"
-  s.author    = { "MXRTeamCorp" => "long.liu@mxrcorp.com" }
+  s.author    = { "MXRTeam" => "long.liu@mxrcorp.com" }
   s.platform     = :ios, "7.0"
   s.ios.deployment_target = "7.0"
   s.source       = { :git => "https://github.com/MXRTeamCorp/MXRProfiler.git", :tag => "#{s.version}" }
