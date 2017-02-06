@@ -2,7 +2,7 @@
 //  AppDelegate.m
 //  easywayout
 //
-//  Created by Martin.Liu on 2017/1/1.
+//  Created by Martin.Liu and Gxd on 2017/1/1.
 //  Copyright © 2017年 MAIERSI. All rights reserved.
 //
 
