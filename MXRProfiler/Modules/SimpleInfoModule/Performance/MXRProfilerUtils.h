@@ -7,6 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MXRProfilerMacro.h"
+
+MXR_EXTERN_C_BEGIN
 
 uint64_t MXRProfilerResidentMemoryInBytes(void);
 
@@ -18,4 +21,6 @@ float MXRProfiler_MemoryUsedPercent(void);
 
 float MXRProfiler_CpuUsedPercent(void);
 
-int* getNetworkFlows(int networkFlows[]);
+int *getNetworkFlows(int networkFlows[]);
+
+MXR_EXTERN_C_END

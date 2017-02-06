@@ -7,16 +7,16 @@
 //
 
 #import "MXRProfilerTool.h"
-#import "MXRProfilerWindow.h"
-#import "MXRProfilerWindowTouchesHandling.h"
-#import "MXRProfilerContainerViewController.h"
-#import "MXRProfilerSimpleInfoViewController.h"
-#import "MXRProfilerStandstillListViewController.h"
 #import "MXRMonitorRunloop.h"
 #import "MXRProfilerInfo.h"
 #import "MXRProfilerStandstillInfo.h"
 #import "MXRCallStack.h"
 #import "MXRProfilerMacro.h"
+#import "MXRProfilerWindow.h"
+#import "MXRProfilerWindowTouchesHandling.h"
+#import "MXRProfilerContainerViewController.h"
+#import "MXRProfilerSimpleInfoViewController.h"
+#import "MXRProfilerStandstillListViewController.h"
 
 static const NSUInteger kMXRSimpleVCHeight = 100.0;
 static const NSUInteger kMXRStandstaillVCHeight = 250;
@@ -24,7 +24,7 @@ static const NSUInteger kMXRStandstaillVCHeight = 250;
 @interface MXRProfilerTool() <MXRProfilerWindowTouchesHandling, MXRProfilerPresentationModeDelegate>
 
 @property (nonatomic, strong) MXRProfilerWindow *profilerWindow;
-
+@property (nonatomic, assign) MXRProfilerPresentationMode presentationMode;
 @end
 
 @implementation MXRProfilerTool
@@ -45,9 +45,17 @@ static const NSUInteger kMXRStandstaillVCHeight = 250;
     return _profilerWindow;
 }
 
+- (void)setProfilerModes:(MXRProfilerModes)profilerModes
+{
+    MXRPROFILERINFO.profilerModes = profilerModes;
+}
 
 - (void)startAnalyze
 {
+    if (MXRPROFILERINFO.profilerModes == MXRProfilerModeNone) {
+        return;
+    }
+    _isAnalyzing = YES;
     _containerViewController = [[MXRProfilerContainerViewController alloc] init];
     self.profilerWindow.rootViewController = _containerViewController;
     
@@ -57,29 +65,26 @@ static const NSUInteger kMXRStandstaillVCHeight = 250;
     [_containerViewController presentViewController:_simpleInfoViewController
                                            withSize:CGSizeMake(kMXRSimpleVCHeight,
                                                                kMXRSimpleVCHeight)];
-    [[MXRMonitorRunloop sharedInstance] startMonitor];
-    [MXRMonitorRunloop sharedInstance].callbackWhenStandStill = ^{
-        MXRProfilerStandstillInfo *standstaillInfo = [MXRProfilerStandstillInfo new];
-        standstaillInfo.happendTimeIntervalSince1970 = [[NSDate new] timeIntervalSince1970];
-        standstaillInfo.currentVCClassName = MXRPROFILERINFO.currentVCClassName;
-        standstaillInfo.mainTreadCallStack = [MXRCallStack mxr_backtraceOfMainThread];
-        [MXRPROFILERINFO.standstaillInfos addObject:standstaillInfo];
-//        standstaillInfo.allTreadCallStack = [MXRCallStack mxr_backtraceOfAllThread];
-    };
+    if (MXRPROFILERINFO.profilerModes & MXRProfilerModeStandstill) {
+        [[MXRMonitorRunloop sharedInstance] startMonitor];
+        [MXRMonitorRunloop sharedInstance].callbackWhenStandStill = ^{
+            MXRProfilerStandstillInfo *standstaillInfo = [MXRProfilerStandstillInfo new];
+            standstaillInfo.happendTimeIntervalSince1970 = [[NSDate new] timeIntervalSince1970];
+            standstaillInfo.currentVCClassName = MXRPROFILERINFO.currentVCClassName;
+            standstaillInfo.mainTreadCallStack = [MXRCallStack mxr_backtraceOfMainThread];
+            [MXRPROFILERINFO.standstaillInfos addObject:standstaillInfo];
+            //        standstaillInfo.allTreadCallStack = [MXRCallStack mxr_backtraceOfAllThread];
+        };
+    }
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(monitorStandstillHappend) name:MXRPROFILERNOTIFICATION_HAPPENSTANDSTILL object:nil];
 }
 
-- (void)monitorStandstillHappend
-{
-    if (self.presentationMode != MXRProfilerPresentationMode_Standstill) {
-        MXRPROFILERINFO.standstaillSign = YES;
-    }
-}
-
 - (void)endAnalyze
 {
+    _isAnalyzing = NO;
     [[MXRMonitorRunloop sharedInstance] endMonitor];
+    _profilerWindow = nil;
 }
 
 - (void)setPresentationMode:(MXRProfilerPresentationMode)presentationMode
@@ -107,6 +112,14 @@ static const NSUInteger kMXRStandstaillVCHeight = 250;
             [_containerViewController presentViewController:_standstillListViewController withSize:CGSizeMake(FLT_MAX, kMXRStandstaillVCHeight)];
         }
             break;
+    }
+}
+
+#pragma mark - Notification
+- (void)monitorStandstillHappend
+{
+    if (self.presentationMode != MXRProfilerPresentationMode_Standstill) {
+        MXRPROFILERINFO.standstaillSign = YES;
     }
 }
 

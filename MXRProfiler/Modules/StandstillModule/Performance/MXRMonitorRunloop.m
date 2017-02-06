@@ -2,7 +2,7 @@
 //  MXRMonitorRunloop.m
 //  easywayout
 //
-//  Created by mxr on 17/1/19.
+//  Created by Martin.Liu on 17/1/19.
 //  Copyright © 2017年 MAIERSI. All rights reserved.
 //
 
@@ -10,8 +10,11 @@
 #import "MXRCallStack.h"
 #import "MXRProfilerMacro.h"
 
-static const NSInteger MXRMonitorRunloopStandstillCount = 5;                // 多少次卡顿纪录为一次有效卡顿
+static const NSInteger MXRMonitorRunloopMinOneStandstillMillisecond = 20;
+static const NSInteger MXRMonitorRunloopMinStandstillCount = 1;
+
 static const NSInteger MXRMonitorRunloopOneStandstillMillisecond = 50;      // 超过多少毫秒为一次卡顿
+static const NSInteger MXRMonitorRunloopStandstillCount = 5;                // 多少次卡顿纪录为一次有效卡顿
 
 @interface MXRMonitorRunloop(){
     CFRunLoopObserverRef _observer;
@@ -29,11 +32,27 @@ static const NSInteger MXRMonitorRunloopOneStandstillMillisecond = 50;      // �
 + (instancetype)sharedInstance
 {
     static dispatch_once_t once;
-    static id sharedInstance;
+    static MXRMonitorRunloop *sharedInstance;
     dispatch_once(&once, ^{
         sharedInstance = [[self alloc] init];
+        sharedInstance.limitMillisecond = MXRMonitorRunloopOneStandstillMillisecond;
+        sharedInstance.standstillCount = MXRMonitorRunloopStandstillCount;
     });
     return sharedInstance;
+}
+
+- (void)setLimitMillisecond:(int)limitMillisecond
+{
+    [self willChangeValueForKey:@"limitMillisecond"];
+    _limitMillisecond = limitMillisecond >= MXRMonitorRunloopMinOneStandstillMillisecond ? limitMillisecond : MXRMonitorRunloopMinOneStandstillMillisecond;
+    [self didChangeValueForKey:@"limitMillisecond"];
+}
+
+- (void)setStandstillCount:(int)standstillCount
+{
+    [self willChangeValueForKey:@"standstillCount"];
+    _standstillCount = standstillCount >= MXRMonitorRunloopMinStandstillCount ? standstillCount : MXRMonitorRunloopMinStandstillCount;
+    [self didChangeValueForKey:@"standstillCount"];
 }
 
 - (void) startMonitor
@@ -84,10 +103,10 @@ static void runLoopObserverCallBack(CFRunLoopObserverRef observer, CFRunLoopActi
                 }
                 // N次卡顿超过阈值T记录为一次卡顿
                 // Returns zero on success, or non-zero if the timeout occurred.
-                long dsw = dispatch_semaphore_wait(_semaphore, dispatch_time(DISPATCH_TIME_NOW, MXRMonitorRunloopOneStandstillMillisecond * NSEC_PER_MSEC));
+                long dsw = dispatch_semaphore_wait(_semaphore, dispatch_time(DISPATCH_TIME_NOW, _limitMillisecond * NSEC_PER_MSEC));
                 if (dsw != 0) {
                     if (_activity == kCFRunLoopBeforeSources || _activity == kCFRunLoopAfterWaiting) {
-                        if (++_countTime < MXRMonitorRunloopStandstillCount) continue;
+                        if (++_countTime < _standstillCount) continue;
                         if (self.callbackWhenStandStill) {
                             self.callbackWhenStandStill();
                         }

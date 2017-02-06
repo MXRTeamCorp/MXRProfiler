@@ -14,7 +14,10 @@
 + (instancetype)sharedInstance
 {
     SINGLE_INSTANCE_USING_BLOCK(^{
-        return [[self alloc] init];
+        MXRProfilerInfo *profilerInfo = [[self alloc] init];
+        profilerInfo->_profilerModes = MXRProfilerModeALL;
+        return profilerInfo;
+        
     });
 }
 
@@ -29,6 +32,11 @@
         _standstaillInfos = [NSMutableArray arrayWithCapacity:1 << 6];
     }
     return _standstaillInfos;
+}
+
+- (void)setProfilerModes:(MXRProfilerModes)profilerModes
+{
+    
 }
 
 @end

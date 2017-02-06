@@ -187,7 +187,7 @@ static const CGFloat MXRProfierSignWidth = 15;
     [mutableString appendFormat:@" cpu:%.f%%", self.cpuUsed * 100];
     [mutableString appendFormat:@"\n fps:%ld", self.fpsRate];
     [mutableString appendFormat:@"\n mem:%@", self.memoryUsed];
-    [mutableString appendFormat:@"\n %@/s", self.networkFlowVelocity];
+    [mutableString appendFormat:@"\n %@/s", self.networkFlowVelocity ?: @"0KB"];
     self.infoLabel.text = mutableString;
 }
 

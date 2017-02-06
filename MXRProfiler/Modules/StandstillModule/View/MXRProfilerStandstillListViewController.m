@@ -8,6 +8,7 @@
 
 #import "MXRProfilerStandstillListViewController.h"
 #import "MXRProfilerMacro.h"
+#import "MXRProfilerStandstillInfo.h"
 #import "MXRProfilerStandstillListView.h"
 #import "MXRProfilerStandstillDetailViewController.h"
 

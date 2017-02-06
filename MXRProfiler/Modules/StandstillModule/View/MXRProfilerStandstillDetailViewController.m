@@ -7,7 +7,6 @@
 //
 
 #import "MXRProfilerStandstillDetailViewController.h"
-#import "MXRProfilerStandstillDetailScrollView.h"
 #import "MXRProfilerStandstillDetailView.h"
 @interface MXRProfilerStandstillDetailViewController ()
 

@@ -2,11 +2,10 @@
 //  MXRProfilerMacro.h
 //  easywayout
 //
-//  Created by mxr on 17/1/17.
+//  Created by Martin.Liu on 17/1/17.
 //  Copyright © 2017年 MAIERSI. All rights reserved.
 //
 #import "MXRProfilerInfo.h"
-#import "MXRProfilerStandstillInfo.h"
 #import "MXRProfilerNotification.h"
 
 #ifndef MXRProfilerMacro_h
@@ -27,6 +26,36 @@
                                 blue:((float)(_hex & 0xFF))/255.0 alpha:_alpha]
 #endif
 
+//#ifndef SINGLE_INSTANCE_USING_BLOCK
+/**
+ *  单例宏方法
+ *
+ *  @param block
+ *
+ *  @return 返回单例
+ */
+#define SINGLE_INSTANCE_USING_BLOCK(block) \
+static dispatch_once_t pred = 0; \
+static id _sharedObject = nil; \
+dispatch_once(&pred, ^{ \
+_sharedObject = block(); \
+}); \
+return _sharedObject; \
+//#endif
+
+#ifdef __cplusplus
+    #ifndef MXR_EXTERN_C_BEGIN
+        #define MXR_EXTERN_C_BEGIN  extern "C" {
+        #define MXR_EXTERN_C_END  }
+    #endif
+#else
+    #ifndef MXR_EXTERN_C_BEGIN
+        #define MXR_EXTERN_C_BEGIN
+        #define MXR_EXTERN_C_END
+    #endif
+#endif
+
+MXR_EXTERN_C_BEGIN
 /**
  Submits a block for asynchronous execution on a main queue and returns immediately.
  */
@@ -48,22 +77,6 @@ static inline void mxr_dispatch_sync_on_main_queue(void (^block)()) {
         dispatch_sync(dispatch_get_main_queue(), block);
     }
 }
-
-//#ifndef SINGLE_INSTANCE_USING_BLOCK
-/**
- *  单例宏方法
- *
- *  @param block
- *
- *  @return 返回单例
- */
-#define SINGLE_INSTANCE_USING_BLOCK(block) \
-static dispatch_once_t pred = 0; \
-static id _sharedObject = nil; \
-dispatch_once(&pred, ^{ \
-_sharedObject = block(); \
-}); \
-return _sharedObject; \
-//#endif
+MXR_EXTERN_C_END
 
 #endif /* MXRProfilerMacro_h */
