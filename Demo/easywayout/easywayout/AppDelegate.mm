@@ -27,6 +27,7 @@ BMKMapManager *_mapManager;
     _profilerTool = [[MXRProfilerTool alloc] init];
     [_profilerTool startAnalyze];
     
+    /***/
     // Override point for customization after application launch.
     [self initAppearance];  
     
