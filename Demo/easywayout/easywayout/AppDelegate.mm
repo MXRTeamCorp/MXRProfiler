@@ -34,7 +34,7 @@ BMKMapManager *_mapManager;
     _mapManager = [[BMKMapManager alloc] init];
     [_mapManager start:@"Qx4tcbgXcxBQoZtjuy7H51TjVjzpCgix" generalDelegate:self];
     
-//    _memoryProfiler = [[FBMemoryProfiler alloc] initWithPlugins:@[[CacheCleanerPlugin new],
+//      _memoryProfiler = [[FBMemoryProfiler alloc] initWithPlugins:@[[CacheCleanerPlugin new],
 //                                                                  [RetainCycleLoggerPlugin new]]
 //                               retainCycleDetectorConfiguration:nil];
 //    [_memoryProfiler enable];
