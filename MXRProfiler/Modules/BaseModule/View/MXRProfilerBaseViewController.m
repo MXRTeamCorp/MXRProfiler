@@ -34,4 +34,19 @@
 }
 */
 
+- (void)containerWillMove:(UIViewController *)container
+{
+    // No extra behavior
+}
+
+- (BOOL)shouldStretchInMovableContainer
+{
+    return YES;
+}
+
+- (CGFloat)minimumHeightInMovableContainer
+{
+    return 200;
+}
+
 @end

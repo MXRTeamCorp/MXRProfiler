@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MXRProfilerMovableViewController.h"
 
-@interface MXRProfilerBaseViewController : UIViewController
+@interface MXRProfilerBaseViewController : UIViewController <MXRProfilerMovableViewController>
 
 @end

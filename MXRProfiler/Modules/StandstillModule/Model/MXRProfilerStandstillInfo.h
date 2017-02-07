@@ -13,6 +13,6 @@
 @property (nonatomic, assign) NSTimeInterval happendTimeIntervalSince1970;
 @property (nonatomic, strong) NSString *currentVCClassName;
 @property (nonatomic, strong) NSString *mainTreadCallStack;
-@property (nonatomic, strong) NSString *allTreadCallStack;
+//@property (nonatomic, strong) NSString *allTreadCallStack;    // 暂时不用
 
 @end

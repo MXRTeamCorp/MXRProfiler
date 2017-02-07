@@ -11,7 +11,7 @@
 #import "MXRProfilerMovableViewController.h"
 #import "MXRProfilerPresentationModeDelegate.h"
 
-@interface MXRProfilerSimpleInfoViewController : MXRProfilerBaseViewController <MXRProfilerMovableViewController>
+@interface MXRProfilerSimpleInfoViewController : MXRProfilerBaseViewController 
 
 @property (nonatomic, weak) id<MXRProfilerPresentationModeDelegate> delegate;
 

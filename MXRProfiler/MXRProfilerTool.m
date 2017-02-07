@@ -30,6 +30,7 @@ static const NSUInteger kMXRStandstaillVCHeight = 250;
 @implementation MXRProfilerTool
 {
     MXRProfilerContainerViewController *_containerViewController;
+    UIViewController *_currentLocationViewController;   // 保存present时的VC，用来计算用户行为是否有效。
     
     MXRProfilerSimpleInfoViewController *_simpleInfoViewController;
     MXRProfilerStandstillListViewController *_standstillListViewController;
@@ -62,6 +63,7 @@ static const NSUInteger kMXRStandstaillVCHeight = 250;
     [_containerViewController dismissCurrentViewController];
     _simpleInfoViewController = [MXRProfilerSimpleInfoViewController new];
     _simpleInfoViewController.delegate = self;
+    _currentLocationViewController = _simpleInfoViewController;
     [_containerViewController presentViewController:_simpleInfoViewController
                                            withSize:CGSizeMake(kMXRSimpleVCHeight,
                                                                kMXRSimpleVCHeight)];
@@ -73,7 +75,6 @@ static const NSUInteger kMXRStandstaillVCHeight = 250;
             standstaillInfo.currentVCClassName = MXRPROFILERINFO.currentVCClassName;
             standstaillInfo.mainTreadCallStack = [MXRCallStack mxr_backtraceOfMainThread];
             [MXRPROFILERINFO.standstaillInfos addObject:standstaillInfo];
-            //        standstaillInfo.allTreadCallStack = [MXRCallStack mxr_backtraceOfAllThread];
         };
     }
     
@@ -95,6 +96,7 @@ static const NSUInteger kMXRStandstaillVCHeight = 250;
         {
             [_containerViewController dismissCurrentViewController];
             _standstillListViewController = nil;
+            _currentLocationViewController = nil;
             _simpleInfoViewController = [MXRProfilerSimpleInfoViewController new];
             _simpleInfoViewController.delegate = self;
             [_containerViewController presentViewController:_simpleInfoViewController
@@ -107,8 +109,10 @@ static const NSUInteger kMXRStandstaillVCHeight = 250;
             MXRPROFILERINFO.standstaillSign = NO;
             [_containerViewController dismissCurrentViewController];
             _simpleInfoViewController = nil;
+            _currentLocationViewController = nil;
             _standstillListViewController = [MXRProfilerStandstillListViewController new];
             _standstillListViewController.delegate = self;
+            _currentLocationViewController = _standstillListViewController;
             [_containerViewController presentViewController:_standstillListViewController withSize:CGSizeMake(FLT_MAX, kMXRStandstaillVCHeight)];
         }
             break;
@@ -132,18 +136,23 @@ static const NSUInteger kMXRStandstaillVCHeight = 250;
 #pragma mark - MXRProfilerWindowTouchesHandling
 - (BOOL)mxr_window:(UIWindow *)window shouldReceiveTouchAtPoint:(CGPoint)point
 {
-    switch (self.presentationMode) {
-        case MXRProfilerPresentationMode_SimpleInfo:
-            return CGRectContainsPoint(_simpleInfoViewController.view.bounds,
-                                [_simpleInfoViewController.view convertPoint:point
-                                                                    fromView:window]);
-
-            break;
-        case MXRProfilerPresentationMode_Standstill:
-            return CGRectContainsPoint(_standstillListViewController.view.bounds,
-                                [_standstillListViewController.view convertPoint:point
-                                                                    fromView:window]);
+    if (_currentLocationViewController) {
+        return CGRectContainsPoint(_currentLocationViewController.view.bounds,
+                                   [_currentLocationViewController.view convertPoint:point
+                                                                       fromView:window]);
     }
+//    switch (self.presentationMode) {
+//        case MXRProfilerPresentationMode_SimpleInfo:
+//            return CGRectContainsPoint(_simpleInfoViewController.view.bounds,
+//                                [_simpleInfoViewController.view convertPoint:point
+//                                                                    fromView:window]);
+//
+//            break;
+//        case MXRProfilerPresentationMode_Standstill:
+//            return CGRectContainsPoint(_standstillListViewController.view.bounds,
+//                                [_standstillListViewController.view convertPoint:point
+//                                                                    fromView:window]);
+//    }
     return YES;
 }
 

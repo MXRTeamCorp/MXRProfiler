@@ -5,12 +5,12 @@
 //  Created by Martin.Liu on 17/1/17.
 //  Copyright © 2017年 MAIERSI. All rights reserved.
 //
-#import "MXRProfilerInfo.h"
-#import "MXRProfilerNotification.h"
 
 #ifndef MXRProfilerMacro_h
 #define MXRProfilerMacro_h
 
+#import "MXRProfilerInfo.h"
+#import "MXRProfilerNotification.h"
 #import <pthread.h>
 
 #ifndef RGBHEX

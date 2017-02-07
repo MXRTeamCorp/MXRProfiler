@@ -11,6 +11,7 @@
 #import "MXRProfilerStandstillInfo.h"
 #import "MXRProfilerStandstillListView.h"
 #import "MXRProfilerStandstillDetailViewController.h"
+#import "MXRProfilerNavigationViewController.h"
 
 @interface MXRProfilerStandstillListViewController () <UITableViewDelegate, UITableViewDataSource>
 {
@@ -59,14 +60,19 @@
 {
     if (!_dateFormatter) {
         _dateFormatter = [[NSDateFormatter alloc] init];
-        _dateFormatter.dateFormat = @"yyyy-MM-dd hh:mm:ss";
+        _dateFormatter.dateFormat = @"yyyy-MM-dd hh:mm:ss.SSS";
     }
     return _dateFormatter;
 }
 
 - (void)hiddenVC:(id)sender
 {
-    if ([_delegate respondsToSelector:@selector(presentationDelegateChangePresentationModeToMode:)]) {
+    if ([self.navigationController isKindOfClass:[MXRProfilerNavigationViewController class]]) {
+        if ([((MXRProfilerNavigationViewController *)self.navigationController).profilerDelegate respondsToSelector:@selector(presentationDelegateChangePresentationModeToMode:)]) {
+            [((MXRProfilerNavigationViewController *)self.navigationController).profilerDelegate presentationDelegateChangePresentationModeToMode:MXRProfilerPresentationMode_SimpleInfo];
+        }
+    }
+    else if ([_delegate respondsToSelector:@selector(presentationDelegateChangePresentationModeToMode:)]) {
         [_delegate presentationDelegateChangePresentationModeToMode:MXRProfilerPresentationMode_SimpleInfo];
     }
 }
@@ -111,12 +117,17 @@
         standstillInfo = MXRPROFILERINFO.standstaillInfos[index];
         MXRProfilerStandstillDetailViewController *standstillDetailVC = [MXRProfilerStandstillDetailViewController new];
         standstillDetailVC.standstillInfo = standstillInfo;
-//        [self.navigationController pushViewController:standstillDetailVC animated:YES];
-        [self addChildViewController:standstillDetailVC];
-        standstillDetailVC.view.frame = self.view.bounds;
-        standstillDetailVC.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
-        [self.view addSubview:standstillDetailVC.view];
-        [standstillDetailVC didMoveToParentViewController:self];
+        if (self.navigationController) {
+            [self.navigationController pushViewController:standstillDetailVC animated:YES];
+        }
+        else
+        {
+            [self addChildViewController:standstillDetailVC];
+            standstillDetailVC.view.frame = self.view.bounds;
+            standstillDetailVC.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
+            [self.view addSubview:standstillDetailVC.view];
+            [standstillDetailVC didMoveToParentViewController:self];
+        }
     }
 }
 

@@ -41,6 +41,7 @@
 		5B1E12EE1E4876B1000EE40C /* MXRCallStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B1E12EB1E4876B1000EE40C /* MXRCallStack.m */; };
 		5B1E12EF1E4876B1000EE40C /* MXRMonitorRunloop.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B1E12ED1E4876B1000EE40C /* MXRMonitorRunloop.m */; };
 		5B1E12F21E487C5A000EE40C /* MXRProfilerBaseDBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B1E12F11E487C5A000EE40C /* MXRProfilerBaseDBModel.m */; };
+		5B1E12F51E488254000EE40C /* NSObject+MXRBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B1E12F41E488254000EE40C /* NSObject+MXRBase.m */; };
 		5B58A4891E1BEC1E00713EB8 /* MARBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B58A4811E1BEC1E00713EB8 /* MARBaseViewController.m */; };
 		5B58A48A1E1BEC1E00713EB8 /* MARGlobalManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B58A4831E1BEC1E00713EB8 /* MARGlobalManager.m */; };
 		5B58A48B1E1BEC1E00713EB8 /* MARUserDefault.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B58A4851E1BEC1E00713EB8 /* MARUserDefault.m */; };
@@ -175,6 +176,8 @@
 		5B1E12ED1E4876B1000EE40C /* MXRMonitorRunloop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXRMonitorRunloop.m; sourceTree = "<group>"; };
 		5B1E12F01E487C5A000EE40C /* MXRProfilerBaseDBModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXRProfilerBaseDBModel.h; sourceTree = "<group>"; };
 		5B1E12F11E487C5A000EE40C /* MXRProfilerBaseDBModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXRProfilerBaseDBModel.m; sourceTree = "<group>"; };
+		5B1E12F31E488254000EE40C /* NSObject+MXRBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+MXRBase.h"; path = "../unity/NSObject+MXRBase.h"; sourceTree = "<group>"; };
+		5B1E12F41E488254000EE40C /* NSObject+MXRBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+MXRBase.m"; path = "../unity/NSObject+MXRBase.m"; sourceTree = "<group>"; };
 		5B58A47E1E1BEC1E00713EB8 /* MARAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MARAppDelegate.h; sourceTree = "<group>"; };
 		5B58A47F1E1BEC1E00713EB8 /* MARAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MARAppDelegate.m; sourceTree = "<group>"; };
 		5B58A4801E1BEC1E00713EB8 /* MARBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MARBaseViewController.h; sourceTree = "<group>"; };
@@ -448,6 +451,8 @@
 				5B1E12E71E48627F000EE40C /* NSObject+MXRSwizz.m */,
 				5B1E12F01E487C5A000EE40C /* MXRProfilerBaseDBModel.h */,
 				5B1E12F11E487C5A000EE40C /* MXRProfilerBaseDBModel.m */,
+				5B1E12F31E488254000EE40C /* NSObject+MXRBase.h */,
+				5B1E12F41E488254000EE40C /* NSObject+MXRBase.m */,
 			);
 			path = Unity;
 			sourceTree = "<group>";
@@ -942,6 +947,7 @@
 				5B58A5041E1EB2C700713EB8 /* MARVehicleDBM.m in Sources */,
 				5B58A4E81E1D5AC600713EB8 /* MARMainViewController.m in Sources */,
 				5B0E84351E1FDFF100F5CEBC /* MARRegisterViewController.m in Sources */,
+				5B1E12F51E488254000EE40C /* NSObject+MXRBase.m in Sources */,
 				5B58A4891E1BEC1E00713EB8 /* MARBaseViewController.m in Sources */,
 				5B1E12811E45DA9F000EE40C /* MXRProfilerTool.m in Sources */,
 				5B58A4F01E1E94B600713EB8 /* MARBaseDBModel.m in Sources */,

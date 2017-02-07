@@ -25,7 +25,6 @@
 }
 
 #pragma mark MXRProfilerMovableViewController
-
 - (void)containerWillMove:(UIViewController *)container
 {
     // No extra behavior

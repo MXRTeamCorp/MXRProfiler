@@ -83,7 +83,7 @@ CGFloat MXRProfilerRoundPixelValue(CGFloat value)
     _panGestureRecognizer.maximumNumberOfTouches = 1;
     [_presentedViewController.view addGestureRecognizer:_panGestureRecognizer];
     
-    if ([_presentedViewController shouldStretchInMovableContainer]) {
+    if ([_presentedViewController respondsToSelector:@selector(shouldStretchInMovableContainer)] && [_presentedViewController shouldStretchInMovableContainer]) {
         _pinchGestureRecognizer = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(_pinch:)];
         [_presentedViewController.view addGestureRecognizer:_pinchGestureRecognizer];
     }
@@ -111,7 +111,9 @@ CGFloat MXRProfilerRoundPixelValue(CGFloat value)
 - (void)_pan
 {
     if (_panGestureRecognizer.state == UIGestureRecognizerStateBegan) {
-        [_presentedViewController containerWillMove:self];
+        if ([_presentedViewController respondsToSelector:@selector(containerWillMove:)]) {
+            [_presentedViewController containerWillMove:self];
+        }
     }
     
     CGPoint translation = [_panGestureRecognizer translationInView:self.view];
@@ -150,8 +152,9 @@ CGFloat MXRProfilerRoundPixelValue(CGFloat value)
 {
     if (gestureRecognizer.state == UIGestureRecognizerStateBegan) {
         _heightOnPinch = CGRectGetHeight(_presentedViewController.view.frame);
-        
-        [_presentedViewController containerWillMove:self];
+        if ([_presentedViewController respondsToSelector:@selector(containerWillMove:)]) {
+            [_presentedViewController containerWillMove:self];
+        }
     }
     
     CGFloat windowHeight = CGRectGetHeight(self.view.bounds);
@@ -160,7 +163,11 @@ CGFloat MXRProfilerRoundPixelValue(CGFloat value)
     CGFloat statusBarOffset = 20;
     
     CGFloat expectedHeight = scale * _heightOnPinch;
-    expectedHeight = MAX(expectedHeight, [_presentedViewController minimumHeightInMovableContainer]);
+    CGFloat minHeight = 0;
+    if ([_presentedViewController respondsToSelector:@selector(minimumHeightInMovableContainer)]) {
+        minHeight = [_presentedViewController minimumHeightInMovableContainer];
+    }
+    expectedHeight = MAX(expectedHeight, minHeight);
     expectedHeight = MIN(expectedHeight, windowHeight - statusBarOffset);
     CGRect newFrame = _presentedViewController.view.frame;
     

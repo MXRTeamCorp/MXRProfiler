@@ -9,8 +9,10 @@
 #import <Foundation/Foundation.h>
 #if __has_include(<LKDBHelper.h>)
 #import <LKDBHelper.h>
-#else
+#elif __has_include("LKDBHelper.h")
 #import "LKDBHelper.h"
+#else
+#define MXRPROFILERDB_INVALID
 #endif
 
 /**

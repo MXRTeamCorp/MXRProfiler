@@ -8,19 +8,20 @@
 
 #import "MXRProfilerBaseDBModel.h"
 
-#define MXRBaseDBName @"Profiler.db"
+#define MXRProfilerBaseDBName @"Profiler.db"
 
 @implementation MXRProfilerBaseDBModel
-
+#ifndef MXRPROFILERDB_INVALID
 + (LKDBHelper *)getUsingLKDBHelper
 {
     static LKDBHelper* db;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        NSString *dbPath = [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:MXRBaseDBName];
+        NSString *dbPath = [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:MXRProfilerBaseDBName];
         db = [[LKDBHelper alloc] initWithDBPath:dbPath];
     });
     return db;
 }
+#endif
 
 @end
