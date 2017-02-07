@@ -66,10 +66,10 @@
 #define mxr_NLIST struct nlist
 #endif
 
-typedef struct BSStackFrameEntry{
-    const struct BSStackFrameEntry *const previous;
+typedef struct MXRStackFrameEntry{
+    const struct MXRStackFrameEntry *const previous;
     const uintptr_t return_address;
-} BSStackFrameEntry;
+} MXRStackFrameEntry;
 
 static mach_port_t main_thread_id;
 
@@ -134,7 +134,7 @@ NSString *_mxr_backtraceOfThread(thread_t thread) {
         return @"Fail to get instruction address";
     }
     
-    BSStackFrameEntry frame = {0};
+    MXRStackFrameEntry frame = {0};
     const uintptr_t framePtr = mxr_mach_framePointer(&machineContext);
     if(framePtr == 0 ||
        mxr_mach_copyMem((void *)framePtr, &frame, sizeof(frame)) != KERN_SUCCESS) {

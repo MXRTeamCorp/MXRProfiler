@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "MXRProfilerPresentationModeDelegate.h"
 
-typedef NS_OPTIONS(NSInteger, MXRProfilerModes) {
+typedef NS_OPTIONS(NSUInteger, MXRProfilerModes) {
     MXRProfilerModeALL          = 0xFFFFFFFF,
     MXRProfilerModeNone         = 0,
     
