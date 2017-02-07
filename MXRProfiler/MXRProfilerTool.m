@@ -99,6 +99,7 @@ static const NSUInteger kMXRStandstaillVCHeight = 250;
             _currentLocationViewController = nil;
             _simpleInfoViewController = [MXRProfilerSimpleInfoViewController new];
             _simpleInfoViewController.delegate = self;
+            _currentLocationViewController = _simpleInfoViewController;
             [_containerViewController presentViewController:_simpleInfoViewController
                                                    withSize:CGSizeMake(kMXRSimpleVCHeight,
                                                                        kMXRSimpleVCHeight)];
@@ -153,7 +154,7 @@ static const NSUInteger kMXRStandstaillVCHeight = 250;
 //                                [_standstillListViewController.view convertPoint:point
 //                                                                    fromView:window]);
 //    }
-    return YES;
+    return NO;
 }
 
 @end
