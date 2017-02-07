@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+#import "MXRProfilerMacro.h"
+MXR_EXTERN_C_BEGIN
+
 #define MXRLOG_Callstack_Current NSLog(@"%@",[BSBacktraceLogger mxr_backtraceOfCurrentThread]);
 #define MXRLOG_Callstack_MAIN NSLog(@"%@",[BSBacktraceLogger mxr_backtraceOfMainThread]);
 #define MXRLOG_Callstack_ALL NSLog(@"%@",[BSBacktraceLogger mxr_backtraceOfAllThread]);
@@ -24,3 +27,5 @@
 + (NSString *)mxr_backtraceOfNSThread:(NSThread *)thread;
 
 @end
+
+MXR_EXTERN_C_END
