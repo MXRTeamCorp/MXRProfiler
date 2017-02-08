@@ -30,6 +30,9 @@ typedef NS_OPTIONS(NSUInteger, MXRProfilerModes) {
 
 - (void)setProfilerModes:(MXRProfilerModes)profilerModes;
 
+/// 配置一次有效卡顿发生的条件。  limitMillisecond：超过多少毫秒为一次卡顿，standstillCount：多少次卡顿纪录为一次有效
+- (void)setValidStandstillLimitMillisecond:(int)limitMillisecond count:(int)standstillCount;
+
 - (void)startAnalyze;
 
 - (void)endAnalyze;

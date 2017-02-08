@@ -51,6 +51,12 @@ static const NSUInteger kMXRStandstaillVCHeight = 250;
     MXRPROFILERINFO.profilerModes = profilerModes;
 }
 
+- (void)setValidStandstillLimitMillisecond:(int)limitMillisecond count:(int)standstillCount
+{
+    [MXRMonitorRunloop sharedInstance].limitMillisecond = limitMillisecond;
+    [MXRMonitorRunloop sharedInstance].standstillCount = standstillCount;
+}
+
 - (void)startAnalyze
 {
     if (MXRPROFILERINFO.profilerModes == MXRProfilerModeNone) {
@@ -76,9 +82,8 @@ static const NSUInteger kMXRStandstaillVCHeight = 250;
             standstaillInfo.mainTreadCallStack = [MXRCallStack mxr_backtraceOfMainThread];
             [MXRPROFILERINFO.standstaillInfos addObject:standstaillInfo];
         };
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(monitorStandstillHappend) name:MXRPROFILERNOTIFICATION_HAPPENSTANDSTILL object:nil];
     }
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(monitorStandstillHappend) name:MXRPROFILERNOTIFICATION_HAPPENSTANDSTILL object:nil];
 }
 
 - (void)endAnalyze
@@ -94,27 +99,31 @@ static const NSUInteger kMXRStandstaillVCHeight = 250;
     switch (presentationMode) {
         case MXRProfilerPresentationMode_SimpleInfo:
         {
-            [_containerViewController dismissCurrentViewController];
-            _standstillListViewController = nil;
-            _currentLocationViewController = nil;
-            _simpleInfoViewController = [MXRProfilerSimpleInfoViewController new];
-            _simpleInfoViewController.delegate = self;
-            _currentLocationViewController = _simpleInfoViewController;
-            [_containerViewController presentViewController:_simpleInfoViewController
-                                                   withSize:CGSizeMake(kMXRSimpleVCHeight,
-                                                                       kMXRSimpleVCHeight)];
+            if (MXRPROFILERINFO.profilerModes & MXRProfilerModeSimpleInfo) {
+                [_containerViewController dismissCurrentViewController];
+                _standstillListViewController = nil;
+                _currentLocationViewController = nil;
+                _simpleInfoViewController = [MXRProfilerSimpleInfoViewController new];
+                _simpleInfoViewController.delegate = self;
+                _currentLocationViewController = _simpleInfoViewController;
+                [_containerViewController presentViewController:_simpleInfoViewController
+                                                       withSize:CGSizeMake(kMXRSimpleVCHeight,
+                                                                           kMXRSimpleVCHeight)];
+            }
         }
             break;
         case MXRProfilerPresentationMode_Standstill:
         {
-            MXRPROFILERINFO.standstaillSign = NO;
-            [_containerViewController dismissCurrentViewController];
-            _simpleInfoViewController = nil;
-            _currentLocationViewController = nil;
-            _standstillListViewController = [MXRProfilerStandstillListViewController new];
-            _standstillListViewController.delegate = self;
-            _currentLocationViewController = _standstillListViewController;
-            [_containerViewController presentViewController:_standstillListViewController withSize:CGSizeMake(FLT_MAX, kMXRStandstaillVCHeight)];
+            if (MXRPROFILERINFO.profilerModes & MXRProfilerModeStandstill) {
+                MXRPROFILERINFO.standstaillSign = NO;
+                [_containerViewController dismissCurrentViewController];
+                _simpleInfoViewController = nil;
+                _currentLocationViewController = nil;
+                _standstillListViewController = [MXRProfilerStandstillListViewController new];
+                _standstillListViewController.delegate = self;
+                _currentLocationViewController = _standstillListViewController;
+                [_containerViewController presentViewController:_standstillListViewController withSize:CGSizeMake(FLT_MAX, kMXRStandstaillVCHeight)];
+            }
         }
             break;
     }

@@ -34,9 +34,4 @@
     return _standstaillInfos;
 }
 
-- (void)setProfilerModes:(MXRProfilerModes)profilerModes
-{
-    
-}
-
 @end
