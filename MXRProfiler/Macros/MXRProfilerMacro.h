@@ -9,7 +9,7 @@
 #ifndef MXRProfilerMacro_h
 #define MXRProfilerMacro_h
 
-#import "MXRProfilerInfo.h"
+#import <UIKit/UIKit.h>
 #import "MXRProfilerNotification.h"
 #import <pthread.h>
 
@@ -19,6 +19,7 @@
                             green:((float)((_hex & 0xFF00) >> 8))/255.0 \
                             blue:((float)(_hex & 0xFF))/255.0 alpha:1]
 #endif
+
 #ifndef RGBAHEX
 #define RGBAHEX(_hex, _alpha)    [UIColor \
                                 colorWithRed:((float)((_hex & 0xFF0000) >> 16))/255.0 \
@@ -26,22 +27,7 @@
                                 blue:((float)(_hex & 0xFF))/255.0 alpha:_alpha]
 #endif
 
-//#ifndef SINGLE_INSTANCE_USING_BLOCK
-/**
- *  单例宏方法
- *
- *  @param block
- *
- *  @return 返回单例
- */
-#define SINGLE_INSTANCE_USING_BLOCK(block) \
-static dispatch_once_t pred = 0; \
-static id _sharedObject = nil; \
-dispatch_once(&pred, ^{ \
-_sharedObject = block(); \
-}); \
-return _sharedObject; \
-//#endif
+#define MXR_EXTERN  UIKIT_EXTERN
 
 #ifdef __cplusplus
     #ifndef MXR_EXTERN_C_BEGIN
@@ -55,7 +41,24 @@ return _sharedObject; \
     #endif
 #endif
 
-MXR_EXTERN_C_BEGIN
+/**
+ *  单例宏方法
+ *
+ *  @param block
+ *
+ *  @return 返回单例
+ */
+#ifndef SINGLE_INSTANCE_USING_BLOCK
+#define SINGLE_INSTANCE_USING_BLOCK(block)  \
+    static dispatch_once_t pred = 0;        \
+    static id _sharedObject = nil;          \
+    dispatch_once(&pred, ^{                 \
+        _sharedObject = block();            \
+    });                                     \
+    return _sharedObject;
+#endif
+
+//MXR_EXTERN_C_BEGIN
 /**
  Submits a block for asynchronous execution on a main queue and returns immediately.
  */
@@ -77,6 +80,6 @@ static inline void mxr_dispatch_sync_on_main_queue(void (^block)()) {
         dispatch_sync(dispatch_get_main_queue(), block);
     }
 }
-MXR_EXTERN_C_END
+//MXR_EXTERN_C_END
 
 #endif /* MXRProfilerMacro_h */

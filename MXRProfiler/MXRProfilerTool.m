@@ -17,6 +17,15 @@
 #import "MXRProfilerContainerViewController.h"
 #import "MXRProfilerSimpleInfoViewController.h"
 #import "MXRProfilerStandstillListViewController.h"
+#import "UIDevice+MXRProfiler.h"
+#import "MXRDebug.h"
+
+// 在分析中不可改变配置信息，并且打出log
+#define MXRPROFILEERROR_SETONANALYZING                  \
+        if (_isAnalyzing) {                             \
+            MXRErrorLog(@"配置失败，请关闭检测再进行配置");    \
+            return;                                     \
+        }
 
 static const NSUInteger kMXRSimpleVCHeight = 100.0;
 static const NSUInteger kMXRStandstaillVCHeight = 250;
@@ -48,11 +57,23 @@ static const NSUInteger kMXRStandstaillVCHeight = 250;
 
 - (void)setProfilerModes:(MXRProfilerModes)profilerModes
 {
+    MXRPROFILEERROR_SETONANALYZING
     MXRPROFILERINFO.profilerModes = profilerModes;
+}
+
+- (void)setMXRProfilerLogEnable:(BOOL)logEnabel
+{
+    [MXRDebug setDebugLogLevel:logEnabel ? MXRDebugLogLevelALL : MXRDebugLogLevelNone];
+}
+
+- (void)setMXRProfilerLogLevel:(MXRDebugLogLevel)logLevel
+{
+    [MXRDebug setDebugLogLevel:logLevel];
 }
 
 - (void)setValidStandstillLimitMillisecond:(int)limitMillisecond count:(int)standstillCount
 {
+    MXRPROFILEERROR_SETONANALYZING
     [MXRMonitorRunloop sharedInstance].limitMillisecond = limitMillisecond;
     [MXRMonitorRunloop sharedInstance].standstillCount = standstillCount;
 }
@@ -151,18 +172,6 @@ static const NSUInteger kMXRStandstaillVCHeight = 250;
                                    [_currentLocationViewController.view convertPoint:point
                                                                        fromView:window]);
     }
-//    switch (self.presentationMode) {
-//        case MXRProfilerPresentationMode_SimpleInfo:
-//            return CGRectContainsPoint(_simpleInfoViewController.view.bounds,
-//                                [_simpleInfoViewController.view convertPoint:point
-//                                                                    fromView:window]);
-//
-//            break;
-//        case MXRProfilerPresentationMode_Standstill:
-//            return CGRectContainsPoint(_standstillListViewController.view.bounds,
-//                                [_standstillListViewController.view convertPoint:point
-//                                                                    fromView:window]);
-//    }
     return NO;
 }
 

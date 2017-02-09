@@ -29,7 +29,8 @@
     BOOL isMXRProfilerVC = [self isKindOfClass:[MXRProfilerBaseViewController class]];
     BOOL isNavi = [self isKindOfClass:[UINavigationController class]];
     BOOL isTabbar = [self isKindOfClass:[UITabBarController class]];
-    BOOL shouldUpdateVCName = !(isMXRProfilerVC || isNavi || isTabbar);
+    BOOL isUIInputVC = [self isKindOfClass:[UIInputViewController class]];
+    BOOL shouldUpdateVCName = !(isMXRProfilerVC || isNavi || isTabbar || isUIInputVC);
     if (shouldUpdateVCName) {
         MXRPROFILERINFO.currentVCClassName = NSStringFromClass(self.class);
     }

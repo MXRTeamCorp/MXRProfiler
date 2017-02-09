@@ -7,7 +7,17 @@
 //
 
 #import "MXRProfilerStandstillInfo.h"
+#import "MXRMonitorRunloop.h"
 
 @implementation MXRProfilerStandstillInfo
+
+- (instancetype)init
+{
+    if (self = [super init]) {
+        self.limitMillisecond = [MXRMonitorRunloop sharedInstance].limitMillisecond;
+        self.standstillCount = [MXRMonitorRunloop sharedInstance].standstillCount;
+    }
+    return self;
+}
 
 @end

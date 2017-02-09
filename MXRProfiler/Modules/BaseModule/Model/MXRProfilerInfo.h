@@ -20,6 +20,7 @@
  indicate the which performaces will be monitored.
  should set it before invoke startAnalyze. default is MXRProfilerModeALL
  */
+///
 @property (nonatomic, assign) MXRProfilerModes profilerModes;
 
 /**

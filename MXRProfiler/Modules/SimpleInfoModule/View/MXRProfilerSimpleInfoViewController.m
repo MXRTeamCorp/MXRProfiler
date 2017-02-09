@@ -11,6 +11,7 @@
 #import "MXRWeakProxy.h"
 #import "MXRFPSObserver.h"
 #import "MXRProfilerMacro.h"
+#import "MXRProfilerInfo.h"
 
 static const CGFloat MXRProfierSignWidth = 15;
 
