@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "MXRProfiler"
-  s.version      = "0.0.3"
+  s.version      = "0.0.2"
   s.summary      = "A tool for monitor iPhone's performance"
   s.description  = <<-DESC
     A tool for monitor iPhone's performance, it can monitor app's memory, cpu, fps and so on.
