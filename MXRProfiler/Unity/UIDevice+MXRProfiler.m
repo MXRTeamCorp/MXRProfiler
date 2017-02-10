@@ -8,7 +8,9 @@
 
 #import "UIDevice+MXRProfiler.h"
 #import <sys/sysctl.h>
+#import "MXRProfilerMacro.h"
 
+MXRSYNTH_DUMMY_CLASS(UIDevice_MXRProfiler)
 
 @implementation UIDevice (MXRProfiler)
 

@@ -31,14 +31,20 @@
 
 #ifdef __cplusplus
     #ifndef MXR_EXTERN_C_BEGIN
-        #define MXR_EXTERN_C_BEGIN  extern "C" {
-        #define MXR_EXTERN_C_END  }
+        #define MXR_EXTERN_C_BEGIN extern "C" {
+        #define MXR_EXTERN_C_END }
     #endif
 #else
     #ifndef MXR_EXTERN_C_BEGIN
         #define MXR_EXTERN_C_BEGIN
         #define MXR_EXTERN_C_END
     #endif
+#endif
+
+#ifndef MXRSYNTH_DUMMY_CLASS
+#define MXRSYNTH_DUMMY_CLASS(_name_) \
+@interface MXRSYNTH_DUMMY_CLASS_ ## _name_ : NSObject @end \
+@implementation MXRSYNTH_DUMMY_CLASS_ ## _name_ @end
 #endif
 
 /**

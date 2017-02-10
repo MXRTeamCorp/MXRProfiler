@@ -11,6 +11,9 @@
 #import "MXRProfilerInfo.h"
 #import "NSObject+MXRSwizz.h"
 #import <objc/runtime.h>
+#import "MXRProfilerMacro.h"
+
+MXRSYNTH_DUMMY_CLASS(UIViewController_MXRProfier)
 
 @implementation UIViewController (MXRProfier)
 

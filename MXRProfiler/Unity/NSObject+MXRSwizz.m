@@ -8,6 +8,9 @@
 
 #import "NSObject+MXRSwizz.h"
 #import <objc/runtime.h>
+#import "MXRProfilerMacro.h"
+
+MXRSYNTH_DUMMY_CLASS(NSObject_MXRSwizz)
 
 @implementation NSObject (MXRSwizz)
 
