@@ -16,7 +16,7 @@
 @property (nonatomic, assign) int limitMillisecond;         // 影响一次有效卡顿的一个因素
 @property (nonatomic, assign) int standstillCount;          // 影响一次有效卡顿的一个因素
 
-@property (nonatomic, strong) NSString *appVersion;         // 保存本地或者上传的时候用到
-@property (nonatomic, strong) NSString *systemVersion;      // 保存本地或者上传的时候用到
-
+@property (nonatomic, strong) NSString *appVersion;         // 保存本地或者上传的时候用到  数据库中是可能变化的
+@property (nonatomic, strong) NSString *systemVersion;      // 保存本地或者上传的时候用到  数据库中是可能变化的
+//@property (nonatomic, strong) NSString *machineModelName;      // 保存本地或者上传的时候用到  数据库中是不变的
 @end

@@ -23,7 +23,7 @@
 // 在分析中不可改变配置信息，并且打出log
 #define MXRPROFILEERROR_SETONANALYZING                  \
         if (_isAnalyzing) {                             \
-            MXRErrorLog(@"配置失败，请关闭检测再进行配置");    \
+            MXRErrorLog(@"配置失败，请关闭检测再进行配置");   \
             return;                                     \
         }
 

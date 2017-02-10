@@ -52,9 +52,9 @@
                                     ])
 
 #define kMXRISOldMachie()           ([kMXROldMachies containsObject:[UIDevice currentDevice].mxr_machineModelName])
-#define kMXRISIphone5Series()         ([kMXRIphone5SeriesMachies containsObject:[UIDevice currentDevice].mxr_machineModelName])
-#define kMXRISIphone6Series()         ([kMXRIphone6SeriesMachies containsObject:[UIDevice currentDevice].mxr_machineModelName])
-#define kMXRISIphone7Series()         ([kMXRIphone7SeriesMachies containsObject:[UIDevice currentDevice].mxr_machineModelName])
+#define kMXRISIphone5Series()       ([kMXRIphone5SeriesMachies containsObject:[UIDevice currentDevice].mxr_machineModelName])
+#define kMXRISIphone6Series()       ([kMXRIphone6SeriesMachies containsObject:[UIDevice currentDevice].mxr_machineModelName])
+#define kMXRISIphone7Series()       ([kMXRIphone7SeriesMachies containsObject:[UIDevice currentDevice].mxr_machineModelName])
 
 #define kMXRIsIOSLater(_value_)     ([UIDevice currentDevice].systemVersion.doubleValue >= _value_)
 

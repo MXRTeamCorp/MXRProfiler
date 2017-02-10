@@ -17,23 +17,23 @@ static const NSInteger MXRMonitorRunloopMinStandstillCount = 1;
 
 // default
 static const NSInteger MXRMonitorRunloopOneStandstillMillisecond = 300;      // 超过多少毫秒为一次卡顿
-static const NSInteger MXRMonitorRunloopStandstillCount = 1;                // 多少次卡顿纪录为一次有效卡顿
+static const NSInteger MXRMonitorRunloopStandstillCount = 5;                // 多少次卡顿纪录为一次有效卡顿
 
 // for 7 series
 static const NSInteger MXRMonitorRunloopOneStandstillMillisecond_ForIPhone7eries = 300;
-static const NSInteger MXRMonitorRunloopStandstillCount_ForIPhone7Series = 1;
+static const NSInteger MXRMonitorRunloopStandstillCount_ForIPhone7Series = 5;
 
 // for 6 series
 static const NSInteger MXRMonitorRunloopOneStandstillMillisecond_ForIPhone6Series = 400;
-static const NSInteger MXRMonitorRunloopStandstillCount_ForIPhone6Series = 1;
+static const NSInteger MXRMonitorRunloopStandstillCount_ForIPhone6Series = 5;
 
 // for 5 series
 static const NSInteger MXRMonitorRunloopOneStandstillMillisecond_ForIPhone5Series = 500;
-static const NSInteger MXRMonitorRunloopStandstillCount_ForIPhone5Series = 1;
+static const NSInteger MXRMonitorRunloopStandstillCount_ForIPhone5Series = 5;
 
 // for old machine
 static const NSInteger MXRMonitorRunloopOneStandstillMillisecond_ForOldMachine = 600;
-static const NSInteger MXRMonitorRunloopStandstillCount_ForOldMachine = 1;
+static const NSInteger MXRMonitorRunloopStandstillCount_ForOldMachine = 5;
 
 @interface MXRMonitorRunloop(){
     CFRunLoopObserverRef _observer;
@@ -56,27 +56,27 @@ static const NSInteger MXRMonitorRunloopStandstillCount_ForOldMachine = 1;
         sharedInstance = [[self alloc] init];
         if (kMXRISIphone7Series()) {
             sharedInstance.limitMillisecond = MXRMonitorRunloopOneStandstillMillisecond_ForIPhone7eries;
-            sharedInstance.standstillCount = MXRMonitorRunloopStandstillCount_ForIPhone7Series;
+            sharedInstance.standstillCount  = MXRMonitorRunloopStandstillCount_ForIPhone7Series;
         }
         else if (kMXRISIphone6Series())
         {
             sharedInstance.limitMillisecond = MXRMonitorRunloopOneStandstillMillisecond_ForIPhone6Series;
-            sharedInstance.standstillCount = MXRMonitorRunloopStandstillCount_ForIPhone6Series;
+            sharedInstance.standstillCount  = MXRMonitorRunloopStandstillCount_ForIPhone6Series;
         }
         else if (kMXRISIphone5Series())
         {
             sharedInstance.limitMillisecond = MXRMonitorRunloopOneStandstillMillisecond_ForIPhone5Series;
-            sharedInstance.standstillCount = MXRMonitorRunloopStandstillCount_ForIPhone5Series;
+            sharedInstance.standstillCount  = MXRMonitorRunloopStandstillCount_ForIPhone5Series;
         }
         else if (kMXRISOldMachie())
         {
             sharedInstance.limitMillisecond = MXRMonitorRunloopOneStandstillMillisecond_ForOldMachine;
-            sharedInstance.standstillCount = MXRMonitorRunloopStandstillCount_ForOldMachine;
+            sharedInstance.standstillCount  = MXRMonitorRunloopStandstillCount_ForOldMachine;
         }
         else
         {
             sharedInstance.limitMillisecond = MXRMonitorRunloopOneStandstillMillisecond;
-            sharedInstance.standstillCount = MXRMonitorRunloopStandstillCount;
+            sharedInstance.standstillCount  = MXRMonitorRunloopStandstillCount;
         }
     });
     return sharedInstance;
@@ -138,8 +138,6 @@ static void runLoopObserverCallBack(CFRunLoopObserverRef observer, CFRunLoopActi
         while (YES) {
             @autoreleasepool {
                 if (_isCancel) {
-                    //                NSThread *thread = [NSThread currentThread];
-                    //                [thread cancel];
                     return;
                 }
                 // N次卡顿超过阈值T记录为一次卡顿
@@ -151,7 +149,6 @@ static void runLoopObserverCallBack(CFRunLoopObserverRef observer, CFRunLoopActi
                         if (self.callbackWhenStandStill) {
                             self.callbackWhenStandStill();
                         }
-                        [self doSomeWhenValidStandstill];
                         // post noti when happend standstill
                         mxr_dispatch_async_on_main_queue(^{
                             [[NSNotificationCenter defaultCenter] postNotificationName:MXRPROFILERNOTIFICATION_HAPPENSTANDSTILL object:nil];
@@ -162,11 +159,6 @@ static void runLoopObserverCallBack(CFRunLoopObserverRef observer, CFRunLoopActi
             }
         }
     });
-}
-
-- (void)doSomeWhenValidStandstill
-{
-    
 }
 
 @end
