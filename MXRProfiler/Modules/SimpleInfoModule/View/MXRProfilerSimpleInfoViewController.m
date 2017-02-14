@@ -11,6 +11,7 @@
 #import "MXRWeakProxy.h"
 #import "MXRFPSObserver.h"
 #import "MXRProfilerMacro.h"
+#import "MXRProfilerInfo.h"
 
 static const CGFloat MXRProfierSignWidth = 15;
 
@@ -53,9 +54,14 @@ static const CGFloat MXRProfierSignWidth = 15;
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    _standstillSignView.hidden = MXRPROFILERINFO.standstaillSign != YES;
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(monitorStandstillHappend) name:MXRPROFILERNOTIFICATION_HAPPENSTANDSTILL object:nil];
+    if (MXRPROFILERINFO.profilerModes & MXRProfilerModeStandstill) {
+        _standstillSignView.hidden = MXRPROFILERINFO.standstaillSign != YES;
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(monitorStandstillHappend) name:MXRPROFILERNOTIFICATION_HAPPENSTANDSTILL object:nil];
+    }
+    else
+    {
+        _standstillSignView.hidden = YES;
+    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated

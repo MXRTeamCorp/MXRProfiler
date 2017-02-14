@@ -44,7 +44,7 @@ static NSDateFormatter *dateFormatter;
     _standstillInfo = standstillInfo;
     if (!dateFormatter) {
         dateFormatter = [NSDateFormatter new];
-        dateFormatter.dateFormat = @"yyyy-MM-dd hh:mm:ss";
+        dateFormatter.dateFormat = @"yyyy-MM-dd hh:mm:ss SSS";
     }
     NSString *detailString = [NSString stringWithFormat:@"VC:%@\nTime:%@\n\n%@", self.standstillInfo.currentVCClassName, [dateFormatter stringFromDate:[NSDate dateWithTimeIntervalSince1970:self.standstillInfo.happendTimeIntervalSince1970]], self.standstillInfo.mainTreadCallStack];
     _detailLabel.text = detailString;

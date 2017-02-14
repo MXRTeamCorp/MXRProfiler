@@ -223,7 +223,7 @@ CGFloat MXRProfilerRoundPixelValue(CGFloat value)
                      }];
 }
 
-
+#define _INTERNAL_IMP_ENABLED DEBUG
 - (UIViewController *)_viewControllerDecidingAboutRotations
 {
 #if _INTERNAL_IMP_ENABLED

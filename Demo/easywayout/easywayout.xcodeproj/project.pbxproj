@@ -76,9 +76,11 @@
 		5B8215761E1846EB0070BA88 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B8215741E1846EB0070BA88 /* LaunchScreen.storyboard */; };
 		5B8215811E1846EC0070BA88 /* easywayoutTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8215801E1846EC0070BA88 /* easywayoutTests.m */; };
 		5B82158C1E1846EC0070BA88 /* easywayoutUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B82158B1E1846EC0070BA88 /* easywayoutUITests.m */; };
+		5BAE3D831E4C61E700C586AE /* MXRDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BAE3D821E4C61E700C586AE /* MXRDebug.m */; };
 		5BBAAC4B1E2CFC8600B3A6B8 /* CacheCleanerPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBAAC481E2CFC8600B3A6B8 /* CacheCleanerPlugin.m */; };
 		5BBAAC4C1E2CFC8600B3A6B8 /* RetainCycleLoggerPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBAAC4A1E2CFC8600B3A6B8 /* RetainCycleLoggerPlugin.m */; };
 		84CDD2D41E49A45C00ABA137 /* MXRMonitorNetFlow.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CDD2D31E49A45C00ABA137 /* MXRMonitorNetFlow.m */; };
+		5BD85A771E4BFDF700DB66B5 /* UIDevice+MXRProfiler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BD85A761E4BFDF700DB66B5 /* UIDevice+MXRProfiler.m */; };
 		9D42A5812DCF72F776577DB9 /* libPods-easywayout.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F87718C828F83B593E13D9B /* libPods-easywayout.a */; };
 /* End PBXBuildFile section */
 
@@ -233,12 +235,20 @@
 		5B82158B1E1846EC0070BA88 /* easywayoutUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = easywayoutUITests.m; sourceTree = "<group>"; };
 		5B82158D1E1846EC0070BA88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B8215991E18504D0070BA88 /* easywayout-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "easywayout-Prefix.pch"; sourceTree = "<group>"; };
+		5BAE3D811E4C61E700C586AE /* MXRDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MXRDebug.h; path = ../unity/MXRDebug.h; sourceTree = "<group>"; };
+		5BAE3D821E4C61E700C586AE /* MXRDebug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MXRDebug.m; path = ../unity/MXRDebug.m; sourceTree = "<group>"; };
 		5BBAAC471E2CFC8600B3A6B8 /* CacheCleanerPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CacheCleanerPlugin.h; sourceTree = "<group>"; };
 		5BBAAC481E2CFC8600B3A6B8 /* CacheCleanerPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CacheCleanerPlugin.m; sourceTree = "<group>"; };
 		5BBAAC491E2CFC8600B3A6B8 /* RetainCycleLoggerPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RetainCycleLoggerPlugin.h; sourceTree = "<group>"; };
 		5BBAAC4A1E2CFC8600B3A6B8 /* RetainCycleLoggerPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RetainCycleLoggerPlugin.m; sourceTree = "<group>"; };
+
 		84CDD2D21E49A45C00ABA137 /* MXRMonitorNetFlow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXRMonitorNetFlow.h; sourceTree = "<group>"; };
 		84CDD2D31E49A45C00ABA137 /* MXRMonitorNetFlow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXRMonitorNetFlow.m; sourceTree = "<group>"; };
+
+		5BD85A751E4BFDF700DB66B5 /* UIDevice+MXRProfiler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIDevice+MXRProfiler.h"; path = "../unity/UIDevice+MXRProfiler.h"; sourceTree = "<group>"; };
+		5BD85A761E4BFDF700DB66B5 /* UIDevice+MXRProfiler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIDevice+MXRProfiler.m"; path = "../unity/UIDevice+MXRProfiler.m"; sourceTree = "<group>"; };
+		5BD85A7B1E4C53EC00DB66B5 /* MXRUnity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXRUnity.h; sourceTree = "<group>"; };
+
 		BA82C0B845A1DE85CBE9FB90 /* Pods-easywayout.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-easywayout.debug.xcconfig"; path = "Pods/Target Support Files/Pods-easywayout/Pods-easywayout.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -449,6 +459,7 @@
 		5B1E12E31E48627F000EE40C /* Unity */ = {
 			isa = PBXGroup;
 			children = (
+				5BD85A7B1E4C53EC00DB66B5 /* MXRUnity.h */,
 				5B1E12E41E48627F000EE40C /* MXRWeakProxy.h */,
 				5B1E12E51E48627F000EE40C /* MXRWeakProxy.m */,
 				5B1E12E61E48627F000EE40C /* NSObject+MXRSwizz.h */,
@@ -457,6 +468,10 @@
 				5B1E12F11E487C5A000EE40C /* MXRProfilerBaseDBModel.m */,
 				5B1E12F31E488254000EE40C /* NSObject+MXRBase.h */,
 				5B1E12F41E488254000EE40C /* NSObject+MXRBase.m */,
+				5BD85A751E4BFDF700DB66B5 /* UIDevice+MXRProfiler.h */,
+				5BD85A761E4BFDF700DB66B5 /* UIDevice+MXRProfiler.m */,
+				5BAE3D811E4C61E700C586AE /* MXRDebug.h */,
+				5BAE3D821E4C61E700C586AE /* MXRDebug.m */,
 			);
 			path = Unity;
 			sourceTree = "<group>";
@@ -968,6 +983,7 @@
 				5B1E12E11E486166000EE40C /* MXRProfilerContainerViewController.m in Sources */,
 				5B1E12D41E486145000EE40C /* MXRProfilerStandstillInfo.m in Sources */,
 				5B0E84411E202B4000F5CEBC /* MARLoginModeuleBaseViewController.m in Sources */,
+				5BD85A771E4BFDF700DB66B5 /* UIDevice+MXRProfiler.m in Sources */,
 				5B0E84281E1EBA3200F5CEBC /* MARConstant.m in Sources */,
 				5B1E12D81E486145000EE40C /* MXRProfilerStandstillListViewController.m in Sources */,
 				5B58A49C1E1BF38B00713EB8 /* MARAppDelegate.m in Sources */,
@@ -984,6 +1000,7 @@
 				5B0E84531E22565C00F5CEBC /* MARReserveParkspacePopView.m in Sources */,
 				5B58A5041E1EB2C700713EB8 /* MARVehicleDBM.m in Sources */,
 				5B58A4E81E1D5AC600713EB8 /* MARMainViewController.m in Sources */,
+				5BAE3D831E4C61E700C586AE /* MXRDebug.m in Sources */,
 				5B0E84351E1FDFF100F5CEBC /* MARRegisterViewController.m in Sources */,
 				5B1E12F51E488254000EE40C /* NSObject+MXRBase.m in Sources */,
 				5B58A4891E1BEC1E00713EB8 /* MARBaseViewController.m in Sources */,
@@ -1145,6 +1162,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Tejjer(China) Investment Co. Ltd. (47PWEEQB87)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = 47PWEEQB87;
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/easywayout/easywayout-Prefix.pch";
@@ -1166,6 +1184,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Tejjer(China) Investment Co. Ltd. (47PWEEQB87)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 47PWEEQB87;
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/easywayout/easywayout-Prefix.pch";

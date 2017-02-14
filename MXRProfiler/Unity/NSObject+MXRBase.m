@@ -7,7 +7,9 @@
 //
 
 #import "NSObject+MXRBase.h"
+#import "MXRProfilerMacro.h"
 
+MXRSYNTH_DUMMY_CLASS(NSObject_MXRBase)
 @implementation NSObject (MXRBase)
 
 @end

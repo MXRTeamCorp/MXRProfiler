@@ -7,7 +7,6 @@
 //
 
 #import "MXRProfilerInfo.h"
-#import "MXRProfilerMacro.h"
 
 @implementation MXRProfilerInfo
 
@@ -32,11 +31,6 @@
         _standstaillInfos = [NSMutableArray arrayWithCapacity:1 << 6];
     }
     return _standstaillInfos;
-}
-
-- (void)setProfilerModes:(MXRProfilerModes)profilerModes
-{
-    
 }
 
 @end

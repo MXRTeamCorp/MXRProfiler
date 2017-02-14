@@ -12,6 +12,7 @@
 #import "MXRProfilerStandstillListView.h"
 #import "MXRProfilerStandstillDetailViewController.h"
 #import "MXRProfilerNavigationViewController.h"
+#import "MXRProfilerInfo.h"
 
 @interface MXRProfilerStandstillListViewController () <UITableViewDelegate, UITableViewDataSource>
 {
