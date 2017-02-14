@@ -46,4 +46,8 @@
 #import "MXRProfilerStandstillListView.h"               // 卡顿列表视图
 #import "MXRProfilerStandstillListViewController.h"     // 卡顿列表视图控制器
 
+
+//FlowStatisticsModule
+#import "MXRMonitorNetFlow.h"   //流量监测
+
 #endif /* MXRProfiler_h */

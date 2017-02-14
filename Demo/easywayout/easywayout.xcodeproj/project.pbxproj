@@ -78,6 +78,7 @@
 		5B82158C1E1846EC0070BA88 /* easywayoutUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B82158B1E1846EC0070BA88 /* easywayoutUITests.m */; };
 		5BBAAC4B1E2CFC8600B3A6B8 /* CacheCleanerPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBAAC481E2CFC8600B3A6B8 /* CacheCleanerPlugin.m */; };
 		5BBAAC4C1E2CFC8600B3A6B8 /* RetainCycleLoggerPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBAAC4A1E2CFC8600B3A6B8 /* RetainCycleLoggerPlugin.m */; };
+		84CDD2D41E49A45C00ABA137 /* MXRMonitorNetFlow.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CDD2D31E49A45C00ABA137 /* MXRMonitorNetFlow.m */; };
 		9D42A5812DCF72F776577DB9 /* libPods-easywayout.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F87718C828F83B593E13D9B /* libPods-easywayout.a */; };
 /* End PBXBuildFile section */
 
@@ -236,6 +237,8 @@
 		5BBAAC481E2CFC8600B3A6B8 /* CacheCleanerPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CacheCleanerPlugin.m; sourceTree = "<group>"; };
 		5BBAAC491E2CFC8600B3A6B8 /* RetainCycleLoggerPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RetainCycleLoggerPlugin.h; sourceTree = "<group>"; };
 		5BBAAC4A1E2CFC8600B3A6B8 /* RetainCycleLoggerPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RetainCycleLoggerPlugin.m; sourceTree = "<group>"; };
+		84CDD2D21E49A45C00ABA137 /* MXRMonitorNetFlow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXRMonitorNetFlow.h; sourceTree = "<group>"; };
+		84CDD2D31E49A45C00ABA137 /* MXRMonitorNetFlow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXRMonitorNetFlow.m; sourceTree = "<group>"; };
 		BA82C0B845A1DE85CBE9FB90 /* Pods-easywayout.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-easywayout.debug.xcconfig"; path = "Pods/Target Support Files/Pods-easywayout/Pods-easywayout.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -303,6 +306,7 @@
 				5B1E12991E486145000EE40C /* BaseModule */,
 				5B1E12AC1E486145000EE40C /* SimpleInfoModule */,
 				5B1E12B61E486145000EE40C /* StandstillModule */,
+				84CDD2CE1E499CD700ABA137 /* FlowStatisticsModule */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -697,6 +701,39 @@
 			path = easywayoutUITests;
 			sourceTree = "<group>";
 		};
+		84CDD2CE1E499CD700ABA137 /* FlowStatisticsModule */ = {
+			isa = PBXGroup;
+			children = (
+				84CDD2CF1E499CD700ABA137 /* Model */,
+				84CDD2D01E499CD700ABA137 /* Performance */,
+				84CDD2D11E499CD700ABA137 /* View */,
+			);
+			path = FlowStatisticsModule;
+			sourceTree = "<group>";
+		};
+		84CDD2CF1E499CD700ABA137 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		84CDD2D01E499CD700ABA137 /* Performance */ = {
+			isa = PBXGroup;
+			children = (
+				84CDD2D21E49A45C00ABA137 /* MXRMonitorNetFlow.h */,
+				84CDD2D31E49A45C00ABA137 /* MXRMonitorNetFlow.m */,
+			);
+			path = Performance;
+			sourceTree = "<group>";
+		};
+		84CDD2D11E499CD700ABA137 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		8D2ABA99DF3110F784AE6ECC /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -922,6 +959,7 @@
 				5B0E84321E1EC40C00F5CEBC /* MARMyVehicleViewController.m in Sources */,
 				5B1E12D71E486145000EE40C /* MXRProfilerStandstillListView.m in Sources */,
 				5B58A4D71E1C15E400713EB8 /* MARLoginViewController.m in Sources */,
+				84CDD2D41E49A45C00ABA137 /* MXRMonitorNetFlow.m in Sources */,
 				5B0E843B1E200CB100F5CEBC /* MARResetPasswordViewController.m in Sources */,
 				5B1E12E81E48627F000EE40C /* MXRWeakProxy.m in Sources */,
 				5B1E12D61E486145000EE40C /* MXRProfilerStandstillDetailViewController.m in Sources */,

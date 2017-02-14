@@ -78,6 +78,10 @@ static const NSUInteger kMXRStandstaillVCHeight = 250;
         };
     }
     
+    if(MXRPROFILERINFO.profilerModes & MXRProfilerModeNetflowSpeed){
+        
+    }
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(monitorStandstillHappend) name:MXRPROFILERNOTIFICATION_HAPPENSTANDSTILL object:nil];
 }
 

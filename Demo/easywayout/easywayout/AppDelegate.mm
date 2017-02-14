@@ -33,6 +33,19 @@ BMKMapManager *_mapManager;
     
     _mapManager = [[BMKMapManager alloc] init];
     [_mapManager start:@"Qx4tcbgXcxBQoZtjuy7H51TjVjzpCgix" generalDelegate:self];
+   
+    NSURLSession *session = [NSURLSession sharedSession];
+    [[session dataTaskWithURL:[NSURL URLWithString:@"https://www.baidu.com"]
+            completionHandler:^(NSData *data,
+                                NSURLResponse *response,
+                                NSError *error) {
+                
+             
+                
+                // handle response
+                NSString* newStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+                NSLog(@"newStr=%@",newStr);
+            }] resume];
     
 //      _memoryProfiler = [[FBMemoryProfiler alloc] initWithPlugins:@[[CacheCleanerPlugin new],
 //                                                                  [RetainCycleLoggerPlugin new]]
