@@ -82,6 +82,7 @@
 		5BD85A771E4BFDF700DB66B5 /* UIDevice+MXRProfiler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BD85A761E4BFDF700DB66B5 /* UIDevice+MXRProfiler.m */; };
 		8411CE691E52FB9200660B98 /* NSURLSession+MXRProfier.m in Sources */ = {isa = PBXBuildFile; fileRef = 8411CE681E52FB9200660B98 /* NSURLSession+MXRProfier.m */; };
 		8411CE6D1E53E7BF00660B98 /* MXRNetFlowTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8411CE6C1E53E7BF00660B98 /* MXRNetFlowTest.m */; };
+		8411CE701E53EADD00660B98 /* MXRNetFlowInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8411CE6F1E53EADD00660B98 /* MXRNetFlowInfo.m */; };
 		84CDD2D41E49A45C00ABA137 /* MXRMonitorNetFlow.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CDD2D31E49A45C00ABA137 /* MXRMonitorNetFlow.m */; };
 		9D42A5812DCF72F776577DB9 /* libPods-easywayout.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F87718C828F83B593E13D9B /* libPods-easywayout.a */; };
 /* End PBXBuildFile section */
@@ -250,6 +251,8 @@
 		8411CE681E52FB9200660B98 /* NSURLSession+MXRProfier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLSession+MXRProfier.m"; sourceTree = "<group>"; };
 		8411CE6B1E53E7BF00660B98 /* MXRNetFlowTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXRNetFlowTest.h; sourceTree = "<group>"; };
 		8411CE6C1E53E7BF00660B98 /* MXRNetFlowTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXRNetFlowTest.m; sourceTree = "<group>"; };
+		8411CE6E1E53EADD00660B98 /* MXRNetFlowInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXRNetFlowInfo.h; sourceTree = "<group>"; };
+		8411CE6F1E53EADD00660B98 /* MXRNetFlowInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXRNetFlowInfo.m; sourceTree = "<group>"; };
 		84CDD2D21E49A45C00ABA137 /* MXRMonitorNetFlow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXRMonitorNetFlow.h; sourceTree = "<group>"; };
 		84CDD2D31E49A45C00ABA137 /* MXRMonitorNetFlow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXRMonitorNetFlow.m; sourceTree = "<group>"; };
 		BA82C0B845A1DE85CBE9FB90 /* Pods-easywayout.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-easywayout.debug.xcconfig"; path = "Pods/Target Support Files/Pods-easywayout/Pods-easywayout.debug.xcconfig"; sourceTree = "<group>"; };
@@ -742,6 +745,8 @@
 		84CDD2CF1E499CD700ABA137 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8411CE6E1E53EADD00660B98 /* MXRNetFlowInfo.h */,
+				8411CE6F1E53EADD00660B98 /* MXRNetFlowInfo.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -973,6 +978,7 @@
 				5B1E12CB1E486145000EE40C /* MXRProfilerNavigationViewController.m in Sources */,
 				5B58A48A1E1BEC1E00713EB8 /* MARGlobalManager.m in Sources */,
 				5B0E842F1E1EC2B100F5CEBC /* UINavigationController+MarExtension.m in Sources */,
+				8411CE701E53EADD00660B98 /* MXRNetFlowInfo.m in Sources */,
 				5B1E12EE1E4876B1000EE40C /* MXRCallStack.m in Sources */,
 				5B82156E1E1846EB0070BA88 /* ViewController.mm in Sources */,
 				5B0E844D1E218B9000F5CEBC /* NSObject+MarExtension.m in Sources */,

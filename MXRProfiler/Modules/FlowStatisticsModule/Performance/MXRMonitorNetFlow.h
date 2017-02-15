@@ -28,11 +28,46 @@
 
 
 
+
 /**
  根据请求和返回值进行分析
 
  @param urlRequest 请求
- @param data 返回值
+ @param data 返回的数据
+ @param error 错误信息
  */
--(void)analyze:(NSURLRequest*)urlRequest data:(NSData*)data error:(NSError*)error;
+-(void)analyze:(NSURLRequest*)urlRequest responseData:(NSData*)data error:(NSError*)error;
+
+
+/**
+ 根据请求和返回值进行分析
+
+ @param urlRequest 请求
+ @param location 文件地址
+ @param error 错误信息
+ */
+-(void)analyze:(NSURLRequest*)urlRequest location:(NSURL*)location error:(NSError*)error;
+
+
+/**
+ 根据请求和返回值进行分析
+
+ @param urlRequest 请求
+ @param fileURL 上传文件的url
+ @param data 返回的数据
+ @param error 错误信息
+ */
+-(void)analyze:(NSURLRequest*)urlRequest requestFile:(NSURL *)fileURL responseData:(NSData*)data error:(NSError*)error;
+
+
+
+/**
+ 根据请求和返回值进行分析
+
+ @param urlRequest 请求
+ @param requestData 上传的文件的data
+ @param data 返回的数据
+ @param error 错误信息
+ */
+-(void)analyze:(NSURLRequest*)urlRequest requestData:(NSData *)requestData responseData:(NSData*)data error:(NSError*)error;
 @end

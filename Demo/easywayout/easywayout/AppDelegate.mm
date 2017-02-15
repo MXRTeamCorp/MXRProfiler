@@ -26,6 +26,7 @@ BMKMapManager *_mapManager;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     _profilerTool = [[MXRProfilerTool alloc] init];
+    [_profilerTool setProfilerModes:MXRProfilerModeNetflowSpeed];
     [_profilerTool startAnalyze];
     
     /***/
@@ -43,6 +44,10 @@ BMKMapManager *_mapManager;
     
     [MXRNetFlowTest testDataWithURL];
     [MXRNetFlowTest testDataWithRequest];
+    [MXRNetFlowTest testDowloadWithRequest];
+    [MXRNetFlowTest testDowloadWithURL];
+    [MXRNetFlowTest testUploadFromData];
+    [MXRNetFlowTest testUploadFromFile];
 
     return YES;
 }

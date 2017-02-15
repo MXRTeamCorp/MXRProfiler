@@ -12,4 +12,8 @@
 
 +(void)testDataWithURL;
 +(void)testDataWithRequest;
++(void)testDowloadWithURL;
++(void)testDowloadWithRequest;
++(void)testUploadFromFile;
++(void)testUploadFromData;
 @end

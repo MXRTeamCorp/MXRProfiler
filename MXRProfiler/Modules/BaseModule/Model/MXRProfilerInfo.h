@@ -39,4 +39,8 @@
 @property (nonatomic, assign) BOOL standstaillSign;
 
 
+/**
+ 当前请求的队列,队列中的数据对象为MXRNetFlowInfo
+ */
+@property(nonatomic,strong) NSMutableArray *netFlowInfoArray;
 @end
