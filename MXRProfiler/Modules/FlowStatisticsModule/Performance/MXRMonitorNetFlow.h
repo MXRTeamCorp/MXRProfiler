@@ -16,20 +16,23 @@
 
 
 /**
- 监听服务的请求和返回
-
- @param urlRequest 请求
- @param responseObject 返回结果
+ 开始监听流量
  */
--(void)startMonitor:(NSURLRequest*)urlRequest responseObject:(id)responseObject;
+-(void)startMonitor;
 
 
 /**
- 监听服务的请求和返回
-
- @param urlString 请求地址
- @param parameters 请求参数
- @param responseObject 返回结果
+ 结束监听流量
  */
--(void)startMonitor:(NSString*)urlString parameters:(id)parameters responseObject:(id)responseObject;
+-(void)endMonitor;
+
+
+
+/**
+ 根据请求和返回值进行分析
+
+ @param urlRequest 请求
+ @param data 返回值
+ */
+-(void)analyze:(NSURLRequest*)urlRequest data:(NSData*)data error:(NSError*)error;
 @end

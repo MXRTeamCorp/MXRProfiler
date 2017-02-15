@@ -18,6 +18,7 @@
 #import "MXRProfilerSimpleInfoViewController.h"
 #import "MXRProfilerStandstillListViewController.h"
 #import "UIDevice+MXRProfiler.h"
+#import "MXRMonitorNetFlow.h"
 #import "MXRDebug.h"
 
 // 在分析中不可改变配置信息，并且打出log
@@ -108,7 +109,7 @@ static const NSUInteger kMXRStandstaillVCHeight = 250;
 
     
     if(MXRPROFILERINFO.profilerModes & MXRProfilerModeNetflowSpeed){
-        
+        [[MXRMonitorNetFlow sharedInstance] startMonitor];
     }
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(monitorStandstillHappend) name:MXRPROFILERNOTIFICATION_HAPPENSTANDSTILL object:nil];
@@ -119,6 +120,7 @@ static const NSUInteger kMXRStandstaillVCHeight = 250;
 {
     _isAnalyzing = NO;
     [[MXRMonitorRunloop sharedInstance] endMonitor];
+    [[MXRMonitorNetFlow sharedInstance] endMonitor];
     _profilerWindow = nil;
 }
 

@@ -10,6 +10,11 @@
 
 @interface MXRMonitorNetFlow()
 
+
+/**
+ 控制是否开启流量监测
+ */
+@property(nonatomic,assign) BOOL isStart;
 @end
 
 @implementation MXRMonitorNetFlow
@@ -20,18 +25,22 @@
     static MXRMonitorNetFlow *sharedInstance;
     dispatch_once(&once, ^{
         sharedInstance = [[self alloc] init];
+        sharedInstance.isStart = NO;
     });
     return sharedInstance;
 }
 
--(void)startMonitor:(NSURLRequest*)urlRequest responseObject:(id)responseObject{
-    
+-(void)startMonitor{
+    _isStart  =  YES;
 }
 
--(void)startMonitor:(NSString*)urlString parameters:(id)parameters responseObject:(id)responseObject{
-    
+-(void)endMonitor{
+    _isStart = NO;
 }
 
+-(void)analyze:(NSURLRequest*)urlRequest data:(NSData*)data error:(NSError*)error{
+    if(!_isStart)  return;
+}
 
 
 @end

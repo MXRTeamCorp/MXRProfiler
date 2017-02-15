@@ -12,7 +12,8 @@
 #import <FBMemoryProfiler/FBMemoryProfiler.h>
 #import "CacheCleanerPlugin.h"
 #import "RetainCycleLoggerPlugin.h"
-#import "MXRProfilerTool.h"
+#import "MXRProfiler.h"
+#import "MXRNetFlowTest.h"
 @interface AppDelegate ()
 {
     FBMemoryProfiler *_memoryProfiler;
@@ -34,23 +35,14 @@ BMKMapManager *_mapManager;
     _mapManager = [[BMKMapManager alloc] init];
     [_mapManager start:@"Qx4tcbgXcxBQoZtjuy7H51TjVjzpCgix" generalDelegate:self];
    
-    NSURLSession *session = [NSURLSession sharedSession];
-    [[session dataTaskWithURL:[NSURL URLWithString:@"https://www.baidu.com"]
-            completionHandler:^(NSData *data,
-                                NSURLResponse *response,
-                                NSError *error) {
-                
-             
-                
-                // handle response
-                NSString* newStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-                NSLog(@"newStr=%@",newStr);
-            }] resume];
     
-//      _memoryProfiler = [[FBMemoryProfiler alloc] initWithPlugins:@[[CacheCleanerPlugin new],
-//                                                                  [RetainCycleLoggerPlugin new]]
-//                               retainCycleDetectorConfiguration:nil];
-//    [_memoryProfiler enable];
+    _memoryProfiler = [[FBMemoryProfiler alloc] initWithPlugins:@[[CacheCleanerPlugin new],
+                                                                  [RetainCycleLoggerPlugin new]]
+                               retainCycleDetectorConfiguration:nil];
+    [_memoryProfiler enable];
+    
+    [MXRNetFlowTest testDataWithURL];
+    [MXRNetFlowTest testDataWithRequest];
 
     return YES;
 }
