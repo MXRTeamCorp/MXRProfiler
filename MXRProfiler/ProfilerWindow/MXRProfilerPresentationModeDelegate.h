@@ -9,8 +9,9 @@
 #import <Foundation/Foundation.h>
 
 typedef NS_ENUM(NSInteger, MXRProfilerPresentationMode) {
-    MXRProfilerPresentationMode_SimpleInfo = 0,
-    MXRProfilerPresentationMode_Standstill
+    MXRProfilerPresentationMode_SimpleInfo = 0,//基本信息
+    MXRProfilerPresentationMode_Standstill,//卡顿信息
+    MXRProfilerPresentationMode_NetFlow,//流量
 };
 
 @protocol MXRProfilerPresentationModeDelegate <NSObject>

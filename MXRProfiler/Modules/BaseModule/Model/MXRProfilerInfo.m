@@ -33,12 +33,12 @@
     return _standstaillInfos;
 }
 
-- (NSMutableArray *)netFlowInfoArray
+- (NSMutableArray *)netFlowInfos
 {
-    if (!_netFlowInfoArray) {
-        _netFlowInfoArray = [NSMutableArray arrayWithCapacity:1 << 6];
+    if (!_netFlowInfos) {
+        _netFlowInfos = [NSMutableArray arrayWithCapacity:1 << 6];
     }
-    return _netFlowInfoArray;
+    return _netFlowInfos;
 }
 
 

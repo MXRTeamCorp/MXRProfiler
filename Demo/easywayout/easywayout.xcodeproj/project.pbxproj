@@ -83,6 +83,10 @@
 		8411CE691E52FB9200660B98 /* NSURLSession+MXRProfier.m in Sources */ = {isa = PBXBuildFile; fileRef = 8411CE681E52FB9200660B98 /* NSURLSession+MXRProfier.m */; };
 		8411CE6D1E53E7BF00660B98 /* MXRNetFlowTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8411CE6C1E53E7BF00660B98 /* MXRNetFlowTest.m */; };
 		8411CE701E53EADD00660B98 /* MXRNetFlowInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8411CE6F1E53EADD00660B98 /* MXRNetFlowInfo.m */; };
+		84230A2D1E557CAA005D785A /* MXRProfilerNetFlowListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84230A2C1E557CAA005D785A /* MXRProfilerNetFlowListViewController.m */; };
+		84230A301E557CC1005D785A /* MXRProfilerNetFlowListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84230A2F1E557CC1005D785A /* MXRProfilerNetFlowListView.m */; };
+		84230A331E55A114005D785A /* MXRProfilerNetFlowDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84230A321E55A114005D785A /* MXRProfilerNetFlowDetailView.m */; };
+		84230A361E55A133005D785A /* MXRProfilerNetFlowDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84230A351E55A133005D785A /* MXRProfilerNetFlowDetailViewController.m */; };
 		84CDD2D41E49A45C00ABA137 /* MXRMonitorNetFlow.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CDD2D31E49A45C00ABA137 /* MXRMonitorNetFlow.m */; };
 		9D42A5812DCF72F776577DB9 /* libPods-easywayout.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F87718C828F83B593E13D9B /* libPods-easywayout.a */; };
 /* End PBXBuildFile section */
@@ -253,6 +257,14 @@
 		8411CE6C1E53E7BF00660B98 /* MXRNetFlowTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXRNetFlowTest.m; sourceTree = "<group>"; };
 		8411CE6E1E53EADD00660B98 /* MXRNetFlowInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXRNetFlowInfo.h; sourceTree = "<group>"; };
 		8411CE6F1E53EADD00660B98 /* MXRNetFlowInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXRNetFlowInfo.m; sourceTree = "<group>"; };
+		84230A2B1E557CAA005D785A /* MXRProfilerNetFlowListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXRProfilerNetFlowListViewController.h; sourceTree = "<group>"; };
+		84230A2C1E557CAA005D785A /* MXRProfilerNetFlowListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXRProfilerNetFlowListViewController.m; sourceTree = "<group>"; };
+		84230A2E1E557CC1005D785A /* MXRProfilerNetFlowListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXRProfilerNetFlowListView.h; sourceTree = "<group>"; };
+		84230A2F1E557CC1005D785A /* MXRProfilerNetFlowListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXRProfilerNetFlowListView.m; sourceTree = "<group>"; };
+		84230A311E55A114005D785A /* MXRProfilerNetFlowDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXRProfilerNetFlowDetailView.h; sourceTree = "<group>"; };
+		84230A321E55A114005D785A /* MXRProfilerNetFlowDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXRProfilerNetFlowDetailView.m; sourceTree = "<group>"; };
+		84230A341E55A133005D785A /* MXRProfilerNetFlowDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXRProfilerNetFlowDetailViewController.h; sourceTree = "<group>"; };
+		84230A351E55A133005D785A /* MXRProfilerNetFlowDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXRProfilerNetFlowDetailViewController.m; sourceTree = "<group>"; };
 		84CDD2D21E49A45C00ABA137 /* MXRMonitorNetFlow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXRMonitorNetFlow.h; sourceTree = "<group>"; };
 		84CDD2D31E49A45C00ABA137 /* MXRMonitorNetFlow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXRMonitorNetFlow.m; sourceTree = "<group>"; };
 		BA82C0B845A1DE85CBE9FB90 /* Pods-easywayout.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-easywayout.debug.xcconfig"; path = "Pods/Target Support Files/Pods-easywayout/Pods-easywayout.debug.xcconfig"; sourceTree = "<group>"; };
@@ -765,6 +777,14 @@
 		84CDD2D11E499CD700ABA137 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				84230A2E1E557CC1005D785A /* MXRProfilerNetFlowListView.h */,
+				84230A2F1E557CC1005D785A /* MXRProfilerNetFlowListView.m */,
+				84230A2B1E557CAA005D785A /* MXRProfilerNetFlowListViewController.h */,
+				84230A2C1E557CAA005D785A /* MXRProfilerNetFlowListViewController.m */,
+				84230A311E55A114005D785A /* MXRProfilerNetFlowDetailView.h */,
+				84230A321E55A114005D785A /* MXRProfilerNetFlowDetailView.m */,
+				84230A341E55A133005D785A /* MXRProfilerNetFlowDetailViewController.h */,
+				84230A351E55A133005D785A /* MXRProfilerNetFlowDetailViewController.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -974,6 +994,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84230A361E55A133005D785A /* MXRProfilerNetFlowDetailViewController.m in Sources */,
 				5B58A5011E1EB17A00713EB8 /* MARAddVehicleViewController.m in Sources */,
 				5B1E12CB1E486145000EE40C /* MXRProfilerNavigationViewController.m in Sources */,
 				5B58A48A1E1BEC1E00713EB8 /* MARGlobalManager.m in Sources */,
@@ -990,6 +1011,7 @@
 				5B1E12EF1E4876B1000EE40C /* MXRMonitorRunloop.m in Sources */,
 				5B1E12CA1E486145000EE40C /* MXRProfilerBaseViewController.m in Sources */,
 				5B0E84471E203ED600F5CEBC /* MARReserveParkSpaceResultViewController.m in Sources */,
+				84230A2D1E557CAA005D785A /* MXRProfilerNetFlowListViewController.m in Sources */,
 				5B1E12E91E48627F000EE40C /* NSObject+MXRSwizz.m in Sources */,
 				5B1E12C91E486145000EE40C /* UIViewController+MXRProfier.m in Sources */,
 				5B0E84321E1EC40C00F5CEBC /* MARMyVehicleViewController.m in Sources */,
@@ -1005,6 +1027,7 @@
 				5B1E12E11E486166000EE40C /* MXRProfilerContainerViewController.m in Sources */,
 				5B1E12D41E486145000EE40C /* MXRProfilerStandstillInfo.m in Sources */,
 				5B0E84411E202B4000F5CEBC /* MARLoginModeuleBaseViewController.m in Sources */,
+				84230A331E55A114005D785A /* MXRProfilerNetFlowDetailView.m in Sources */,
 				5BD85A771E4BFDF700DB66B5 /* UIDevice+MXRProfiler.m in Sources */,
 				5B0E84281E1EBA3200F5CEBC /* MARConstant.m in Sources */,
 				5B1E12D81E486145000EE40C /* MXRProfilerStandstillListViewController.m in Sources */,
@@ -1025,6 +1048,7 @@
 				5BAE3D831E4C61E700C586AE /* MXRDebug.m in Sources */,
 				5B0E84351E1FDFF100F5CEBC /* MARRegisterViewController.m in Sources */,
 				5B1E12F51E488254000EE40C /* NSObject+MXRBase.m in Sources */,
+				84230A301E557CC1005D785A /* MXRProfilerNetFlowListView.m in Sources */,
 				5B58A4891E1BEC1E00713EB8 /* MARBaseViewController.m in Sources */,
 				5B1E12811E45DA9F000EE40C /* MXRProfilerTool.m in Sources */,
 				5B58A4F01E1E94B600713EB8 /* MARBaseDBModel.m in Sources */,

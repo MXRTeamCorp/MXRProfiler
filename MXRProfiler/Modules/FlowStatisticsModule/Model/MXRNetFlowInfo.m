@@ -14,6 +14,6 @@
 }
 
 - (NSString *)description{
-    return [NSString stringWithFormat:@"\nURL=%@\n viewController=%@\n request size=%ld\n response size=%ld\n HttpMethod=%@\n amountTotal=%ld\n netStatus=%ld\n createTime=%@\n",_url,_viewControllerName,_flowAmountRequest,_flowAmountResponse,_HTTPMethod,self.flowAmountTotal,_netStatus,_createTime];
+    return [NSString stringWithFormat:@"\nURL=%@\n currentVCClassName=%@\n request size=%ld\n response size=%ld\n HttpMethod=%@\n amountTotal=%ld\n netStatus=%ld\n createTime=%f\n",_url,_currentVCClassName,_flowAmountRequest,_flowAmountResponse,_HTTPMethod,self.flowAmountTotal,_netStatus,_happendTimeIntervalSince1970];
 }
 @end

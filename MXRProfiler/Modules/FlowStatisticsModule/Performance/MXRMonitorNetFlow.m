@@ -35,6 +35,7 @@
     return sharedInstance;
 }
 
+#pragma Public Method
 -(void)startMonitor{
     _isStart  =  YES;
 }
@@ -104,15 +105,14 @@
     
     MXRNetFlowInfo *info = [[MXRNetFlowInfo alloc] init];
     info.url = url;
-    info.viewControllerName =  MXRPROFILERINFO.currentVCClassName;
+    info.currentVCClassName =  MXRPROFILERINFO.currentVCClassName;
     info.flowAmountRequest  = requestAmount + len;
     info.flowAmountResponse = responseAmount;
     info.HTTPMethod         = urlRequest.HTTPMethod;
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"yyyy-MM-dd hh:mm:ss"];
-    info.createTime       = [formatter stringFromDate:[NSDate date]];
+    info.happendTimeIntervalSince1970   = [[NSDate new] timeIntervalSince1970];
     MXRInfoLog(@"%@",[info description]);
-    [[MXRPROFILERINFO netFlowInfoArray] addObject:info];
+    [[MXRPROFILERINFO netFlowInfos] addObject:info];
+    [[NSNotificationCenter defaultCenter] postNotificationName:MXRPROFILERNOTIFICATION_HAPPENSTANDSTILL object:nil];
     
 }
 

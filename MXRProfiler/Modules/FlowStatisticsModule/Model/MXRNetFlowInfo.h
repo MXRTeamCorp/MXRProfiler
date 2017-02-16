@@ -19,7 +19,7 @@
 /**
  当前页面的名字
  */
-@property(nonatomic,copy)   NSString    *viewControllerName;
+@property(nonatomic,copy)   NSString    *currentVCClassName;
 
 
 /**
@@ -37,7 +37,7 @@
 /**
  发生的时间
  */
-@property(nonatomic,copy)   NSString    *createTime;
+@property(nonatomic,assign)   NSTimeInterval happendTimeIntervalSince1970;
 
 
 /**

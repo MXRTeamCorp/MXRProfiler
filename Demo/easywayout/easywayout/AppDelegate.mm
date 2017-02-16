@@ -37,10 +37,10 @@ BMKMapManager *_mapManager;
     [_mapManager start:@"Qx4tcbgXcxBQoZtjuy7H51TjVjzpCgix" generalDelegate:self];
    
     
-    _memoryProfiler = [[FBMemoryProfiler alloc] initWithPlugins:@[[CacheCleanerPlugin new],
-                                                                  [RetainCycleLoggerPlugin new]]
-                               retainCycleDetectorConfiguration:nil];
-    [_memoryProfiler enable];
+//    _memoryProfiler = [[FBMemoryProfiler alloc] initWithPlugins:@[[CacheCleanerPlugin new],
+//                                                                  [RetainCycleLoggerPlugin new]]
+//                               retainCycleDetectorConfiguration:nil];
+//    [_memoryProfiler enable];
     
     [MXRNetFlowTest testDataWithURL];
     [MXRNetFlowTest testDataWithRequest];

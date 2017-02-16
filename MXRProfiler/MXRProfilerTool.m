@@ -17,9 +17,12 @@
 #import "MXRProfilerContainerViewController.h"
 #import "MXRProfilerSimpleInfoViewController.h"
 #import "MXRProfilerStandstillListViewController.h"
+#import "MXRProfilerNetFlowListViewController.h"
+#import "MXRProfilerNavigationViewController.h"
 #import "UIDevice+MXRProfiler.h"
 #import "MXRMonitorNetFlow.h"
 #import "MXRDebug.h"
+
 
 // 在分析中不可改变配置信息，并且打出log
 #define MXRPROFILEERROR_SETONANALYZING                  \
@@ -44,6 +47,7 @@ static const NSUInteger kMXRStandstaillVCHeight = 250;
     
     MXRProfilerSimpleInfoViewController *_simpleInfoViewController;
     MXRProfilerStandstillListViewController *_standstillListViewController;
+    MXRProfilerNetFlowListViewController *_netFlowListViewController;
 }
 
 - (MXRProfilerWindow *)profilerWindow
@@ -89,12 +93,7 @@ static const NSUInteger kMXRStandstaillVCHeight = 250;
     self.profilerWindow.rootViewController = _containerViewController;
     
     [_containerViewController dismissCurrentViewController];
-    _simpleInfoViewController = [MXRProfilerSimpleInfoViewController new];
-    _simpleInfoViewController.delegate = self;
-    _currentLocationViewController = _simpleInfoViewController;
-    [_containerViewController presentViewController:_simpleInfoViewController
-                                           withSize:CGSizeMake(kMXRSimpleVCHeight,
-                                                               kMXRSimpleVCHeight)];
+    [self setPresentationMode:MXRProfilerPresentationMode_NetFlow];
     if (MXRPROFILERINFO.profilerModes & MXRProfilerModeStandstill) {
         [[MXRMonitorRunloop sharedInstance] startMonitor];
         [MXRMonitorRunloop sharedInstance].callbackWhenStandStill = ^{
@@ -134,6 +133,7 @@ static const NSUInteger kMXRStandstaillVCHeight = 250;
                 [_containerViewController dismissCurrentViewController];
                 _standstillListViewController = nil;
                 _currentLocationViewController = nil;
+                _netFlowListViewController     = nil;
                 _simpleInfoViewController = [MXRProfilerSimpleInfoViewController new];
                 _simpleInfoViewController.delegate = self;
                 _currentLocationViewController = _simpleInfoViewController;
@@ -150,11 +150,28 @@ static const NSUInteger kMXRStandstaillVCHeight = 250;
                 [_containerViewController dismissCurrentViewController];
                 _simpleInfoViewController = nil;
                 _currentLocationViewController = nil;
+                _netFlowListViewController     = nil;
                 _standstillListViewController = [MXRProfilerStandstillListViewController new];
                 _standstillListViewController.delegate = self;
                 _currentLocationViewController = _standstillListViewController;
                 [_containerViewController presentViewController:_standstillListViewController withSize:CGSizeMake(FLT_MAX, kMXRStandstaillVCHeight)];
             }
+        }
+        case MXRProfilerPresentationMode_NetFlow:
+        {
+            if(MXRPROFILERINFO.profilerModes & MXRProfilerModeNetflowSpeed)
+            {
+                [_containerViewController dismissCurrentViewController];
+                _standstillListViewController  = nil;
+                _currentLocationViewController = nil;
+                _simpleInfoViewController      = nil;
+                _netFlowListViewController     = [MXRProfilerNetFlowListViewController new];
+                MXRProfilerNavigationViewController *nav = [[MXRProfilerNavigationViewController alloc] initWithRootViewController:_netFlowListViewController];
+                _currentLocationViewController = _netFlowListViewController;
+                [_containerViewController presentViewController:nav
+                                                       withSize:[[UIScreen mainScreen] bounds].size];
+            }
+            
         }
             break;
     }
