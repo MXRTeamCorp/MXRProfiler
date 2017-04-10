@@ -9,8 +9,7 @@
 #import "MXRMonitorNetFlow.h"
 #import "MXRNetFlowInfo.h"
 #import "MXRProfilerInfo.h"
-#import "MXRUnity.h"
-
+#import "MXRUtility.h"
 @interface MXRMonitorNetFlow()
 
 
