@@ -108,12 +108,14 @@
     info.currentVCClassName =  MXRPROFILERINFO.currentVCClassName;
     info.flowAmountRequest  = requestAmount + len;
     info.flowAmountResponse = responseAmount;
-    info.HTTPMethod         = urlRequest.HTTPMethod;
+    info.httpMethod         = urlRequest.HTTPMethod;
     info.happendTimeIntervalSince1970   = [[NSDate new] timeIntervalSince1970];
     MXRInfoLog(@"%@",[info description]);
+    //主线程中post notification
     [[MXRPROFILERINFO netFlowInfos] addObject:info];
-    [[NSNotificationCenter defaultCenter] postNotificationName:MXRPROFILERNOTIFICATION_HAPPENSTANDSTILL object:nil];
-    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [[NSNotificationCenter defaultCenter] postNotificationName:MXRPROFILERNOTIFICATION_HAPPENSTANDSTILL object:nil];
+    });
 }
 
 

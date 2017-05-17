@@ -49,7 +49,7 @@
 /**
  GET PUT DELETE
  */
-@property(nonatomic,copy)   NSString    *HTTPMethod;
+@property(nonatomic,copy)   NSString    *httpMethod;
 
 
 

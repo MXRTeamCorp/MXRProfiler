@@ -10,9 +10,8 @@
 #import "MXRProfilerNetFlowListView.h"
 #import "MXRProfilerInfo.h"
 #import "MXRNetFlowInfo.h"
-#import "MXRProfilerNetFlowDetailViewController.h"
 
-@interface MXRProfilerNetFlowListViewController ()<UITableViewDelegate, UITableViewDataSource>{
+@interface MXRProfilerNetFlowListViewController ()<UITableViewDataSource>{
     MXRProfilerNetFlowListView  *_netFlowView;
 }
 @property (nonatomic, strong) NSDateFormatter *dateFormatter;
@@ -24,7 +23,6 @@
 #pragma mark LifeCircle
 -(void)loadView{
     _netFlowView = [MXRProfilerNetFlowListView new];
-    _netFlowView.tableView.delegate = self;
     _netFlowView.tableView.dataSource = self;
     self.view = _netFlowView;
     self.view.backgroundColor = [UIColor blackColor];
@@ -63,12 +61,6 @@
 }
 
 
-#pragma mark UITableViewDelegate
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    MXRProfilerNetFlowDetailViewController *netFlowVC =  [MXRProfilerNetFlowDetailViewController new];
-    [self.navigationController pushViewController:netFlowVC animated:YES];
-}
 
 #pragma mark UITableViewDataSource
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
