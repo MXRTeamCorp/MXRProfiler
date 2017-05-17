@@ -36,12 +36,8 @@
 		5B1E12D81E486145000EE40C /* MXRProfilerStandstillListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B1E12C71E486145000EE40C /* MXRProfilerStandstillListViewController.m */; };
 		5B1E12E11E486166000EE40C /* MXRProfilerContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B1E12DB1E486166000EE40C /* MXRProfilerContainerViewController.m */; };
 		5B1E12E21E486166000EE40C /* MXRProfilerWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B1E12DF1E486166000EE40C /* MXRProfilerWindow.m */; };
-		5B1E12E81E48627F000EE40C /* MXRWeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B1E12E51E48627F000EE40C /* MXRWeakProxy.m */; };
-		5B1E12E91E48627F000EE40C /* NSObject+MXRSwizz.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B1E12E71E48627F000EE40C /* NSObject+MXRSwizz.m */; };
 		5B1E12EE1E4876B1000EE40C /* MXRCallStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B1E12EB1E4876B1000EE40C /* MXRCallStack.m */; };
 		5B1E12EF1E4876B1000EE40C /* MXRMonitorRunloop.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B1E12ED1E4876B1000EE40C /* MXRMonitorRunloop.m */; };
-		5B1E12F21E487C5A000EE40C /* MXRProfilerBaseDBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B1E12F11E487C5A000EE40C /* MXRProfilerBaseDBModel.m */; };
-		5B1E12F51E488254000EE40C /* NSObject+MXRBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B1E12F41E488254000EE40C /* NSObject+MXRBase.m */; };
 		5B58A4891E1BEC1E00713EB8 /* MARBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B58A4811E1BEC1E00713EB8 /* MARBaseViewController.m */; };
 		5B58A48A1E1BEC1E00713EB8 /* MARGlobalManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B58A4831E1BEC1E00713EB8 /* MARGlobalManager.m */; };
 		5B58A48B1E1BEC1E00713EB8 /* MARUserDefault.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B58A4851E1BEC1E00713EB8 /* MARUserDefault.m */; };
@@ -76,10 +72,8 @@
 		5B8215761E1846EB0070BA88 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B8215741E1846EB0070BA88 /* LaunchScreen.storyboard */; };
 		5B8215811E1846EC0070BA88 /* easywayoutTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8215801E1846EC0070BA88 /* easywayoutTests.m */; };
 		5B82158C1E1846EC0070BA88 /* easywayoutUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B82158B1E1846EC0070BA88 /* easywayoutUITests.m */; };
-		5BAE3D831E4C61E700C586AE /* MXRDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BAE3D821E4C61E700C586AE /* MXRDebug.m */; };
 		5BBAAC4B1E2CFC8600B3A6B8 /* CacheCleanerPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBAAC481E2CFC8600B3A6B8 /* CacheCleanerPlugin.m */; };
 		5BBAAC4C1E2CFC8600B3A6B8 /* RetainCycleLoggerPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBAAC4A1E2CFC8600B3A6B8 /* RetainCycleLoggerPlugin.m */; };
-		5BD85A771E4BFDF700DB66B5 /* UIDevice+MXRProfiler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BD85A761E4BFDF700DB66B5 /* UIDevice+MXRProfiler.m */; };
 		8411CE691E52FB9200660B98 /* NSURLSession+MXRProfier.m in Sources */ = {isa = PBXBuildFile; fileRef = 8411CE681E52FB9200660B98 /* NSURLSession+MXRProfier.m */; };
 		8411CE6D1E53E7BF00660B98 /* MXRNetFlowTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8411CE6C1E53E7BF00660B98 /* MXRNetFlowTest.m */; };
 		8411CE701E53EADD00660B98 /* MXRNetFlowInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8411CE6F1E53EADD00660B98 /* MXRNetFlowInfo.m */; };
@@ -87,6 +81,12 @@
 		84230A301E557CC1005D785A /* MXRProfilerNetFlowListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84230A2F1E557CC1005D785A /* MXRProfilerNetFlowListView.m */; };
 		84CDD2D41E49A45C00ABA137 /* MXRMonitorNetFlow.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CDD2D31E49A45C00ABA137 /* MXRMonitorNetFlow.m */; };
 		9D42A5812DCF72F776577DB9 /* libPods-easywayout.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F87718C828F83B593E13D9B /* libPods-easywayout.a */; };
+		C1E148581E9B2B27004EA701 /* MXRDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = C1E1484C1E9B2B27004EA701 /* MXRDebug.m */; };
+		C1E148591E9B2B27004EA701 /* MXRProfilerBaseDBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C1E1484E1E9B2B27004EA701 /* MXRProfilerBaseDBModel.m */; };
+		C1E1485A1E9B2B27004EA701 /* MXRWeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = C1E148511E9B2B27004EA701 /* MXRWeakProxy.m */; };
+		C1E1485B1E9B2B27004EA701 /* NSObject+MXRBase.m in Sources */ = {isa = PBXBuildFile; fileRef = C1E148531E9B2B27004EA701 /* NSObject+MXRBase.m */; };
+		C1E1485C1E9B2B27004EA701 /* NSObject+MXRSwizz.m in Sources */ = {isa = PBXBuildFile; fileRef = C1E148551E9B2B27004EA701 /* NSObject+MXRSwizz.m */; };
+		C1E1485D1E9B2B27004EA701 /* UIDevice+MXRProfiler.m in Sources */ = {isa = PBXBuildFile; fileRef = C1E148571E9B2B27004EA701 /* UIDevice+MXRProfiler.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -174,18 +174,10 @@
 		5B1E12DE1E486166000EE40C /* MXRProfilerWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXRProfilerWindow.h; sourceTree = "<group>"; };
 		5B1E12DF1E486166000EE40C /* MXRProfilerWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXRProfilerWindow.m; sourceTree = "<group>"; };
 		5B1E12E01E486166000EE40C /* MXRProfilerWindowTouchesHandling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXRProfilerWindowTouchesHandling.h; sourceTree = "<group>"; };
-		5B1E12E41E48627F000EE40C /* MXRWeakProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXRWeakProxy.h; sourceTree = "<group>"; };
-		5B1E12E51E48627F000EE40C /* MXRWeakProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXRWeakProxy.m; sourceTree = "<group>"; };
-		5B1E12E61E48627F000EE40C /* NSObject+MXRSwizz.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MXRSwizz.h"; sourceTree = "<group>"; };
-		5B1E12E71E48627F000EE40C /* NSObject+MXRSwizz.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MXRSwizz.m"; sourceTree = "<group>"; };
 		5B1E12EA1E4876B1000EE40C /* MXRCallStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXRCallStack.h; sourceTree = "<group>"; };
 		5B1E12EB1E4876B1000EE40C /* MXRCallStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXRCallStack.m; sourceTree = "<group>"; };
 		5B1E12EC1E4876B1000EE40C /* MXRMonitorRunloop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXRMonitorRunloop.h; sourceTree = "<group>"; };
 		5B1E12ED1E4876B1000EE40C /* MXRMonitorRunloop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXRMonitorRunloop.m; sourceTree = "<group>"; };
-		5B1E12F01E487C5A000EE40C /* MXRProfilerBaseDBModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXRProfilerBaseDBModel.h; sourceTree = "<group>"; };
-		5B1E12F11E487C5A000EE40C /* MXRProfilerBaseDBModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXRProfilerBaseDBModel.m; sourceTree = "<group>"; };
-		5B1E12F31E488254000EE40C /* NSObject+MXRBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+MXRBase.h"; path = "../unity/NSObject+MXRBase.h"; sourceTree = "<group>"; };
-		5B1E12F41E488254000EE40C /* NSObject+MXRBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+MXRBase.m"; path = "../unity/NSObject+MXRBase.m"; sourceTree = "<group>"; };
 		5B58A47E1E1BEC1E00713EB8 /* MARAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MARAppDelegate.h; sourceTree = "<group>"; };
 		5B58A47F1E1BEC1E00713EB8 /* MARAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MARAppDelegate.m; sourceTree = "<group>"; };
 		5B58A4801E1BEC1E00713EB8 /* MARBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MARBaseViewController.h; sourceTree = "<group>"; };
@@ -240,15 +232,10 @@
 		5B82158B1E1846EC0070BA88 /* easywayoutUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = easywayoutUITests.m; sourceTree = "<group>"; };
 		5B82158D1E1846EC0070BA88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B8215991E18504D0070BA88 /* easywayout-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "easywayout-Prefix.pch"; sourceTree = "<group>"; };
-		5BAE3D811E4C61E700C586AE /* MXRDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MXRDebug.h; path = ../unity/MXRDebug.h; sourceTree = "<group>"; };
-		5BAE3D821E4C61E700C586AE /* MXRDebug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MXRDebug.m; path = ../unity/MXRDebug.m; sourceTree = "<group>"; };
 		5BBAAC471E2CFC8600B3A6B8 /* CacheCleanerPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CacheCleanerPlugin.h; sourceTree = "<group>"; };
 		5BBAAC481E2CFC8600B3A6B8 /* CacheCleanerPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CacheCleanerPlugin.m; sourceTree = "<group>"; };
 		5BBAAC491E2CFC8600B3A6B8 /* RetainCycleLoggerPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RetainCycleLoggerPlugin.h; sourceTree = "<group>"; };
 		5BBAAC4A1E2CFC8600B3A6B8 /* RetainCycleLoggerPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RetainCycleLoggerPlugin.m; sourceTree = "<group>"; };
-		5BD85A751E4BFDF700DB66B5 /* UIDevice+MXRProfiler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIDevice+MXRProfiler.h"; path = "../unity/UIDevice+MXRProfiler.h"; sourceTree = "<group>"; };
-		5BD85A761E4BFDF700DB66B5 /* UIDevice+MXRProfiler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIDevice+MXRProfiler.m"; path = "../unity/UIDevice+MXRProfiler.m"; sourceTree = "<group>"; };
-		5BD85A7B1E4C53EC00DB66B5 /* MXRUnity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXRUnity.h; sourceTree = "<group>"; };
 		8411CE671E52FB9200660B98 /* NSURLSession+MXRProfier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLSession+MXRProfier.h"; sourceTree = "<group>"; };
 		8411CE681E52FB9200660B98 /* NSURLSession+MXRProfier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLSession+MXRProfier.m"; sourceTree = "<group>"; };
 		8411CE6B1E53E7BF00660B98 /* MXRNetFlowTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXRNetFlowTest.h; sourceTree = "<group>"; };
@@ -262,6 +249,19 @@
 		84CDD2D21E49A45C00ABA137 /* MXRMonitorNetFlow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXRMonitorNetFlow.h; sourceTree = "<group>"; };
 		84CDD2D31E49A45C00ABA137 /* MXRMonitorNetFlow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXRMonitorNetFlow.m; sourceTree = "<group>"; };
 		BA82C0B845A1DE85CBE9FB90 /* Pods-easywayout.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-easywayout.debug.xcconfig"; path = "Pods/Target Support Files/Pods-easywayout/Pods-easywayout.debug.xcconfig"; sourceTree = "<group>"; };
+		C1E1484B1E9B2B27004EA701 /* MXRDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXRDebug.h; sourceTree = "<group>"; };
+		C1E1484C1E9B2B27004EA701 /* MXRDebug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXRDebug.m; sourceTree = "<group>"; };
+		C1E1484D1E9B2B27004EA701 /* MXRProfilerBaseDBModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXRProfilerBaseDBModel.h; sourceTree = "<group>"; };
+		C1E1484E1E9B2B27004EA701 /* MXRProfilerBaseDBModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXRProfilerBaseDBModel.m; sourceTree = "<group>"; };
+		C1E148501E9B2B27004EA701 /* MXRWeakProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXRWeakProxy.h; sourceTree = "<group>"; };
+		C1E148511E9B2B27004EA701 /* MXRWeakProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXRWeakProxy.m; sourceTree = "<group>"; };
+		C1E148521E9B2B27004EA701 /* NSObject+MXRBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MXRBase.h"; sourceTree = "<group>"; };
+		C1E148531E9B2B27004EA701 /* NSObject+MXRBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MXRBase.m"; sourceTree = "<group>"; };
+		C1E148541E9B2B27004EA701 /* NSObject+MXRSwizz.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MXRSwizz.h"; sourceTree = "<group>"; };
+		C1E148551E9B2B27004EA701 /* NSObject+MXRSwizz.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MXRSwizz.m"; sourceTree = "<group>"; };
+		C1E148561E9B2B27004EA701 /* UIDevice+MXRProfiler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+MXRProfiler.h"; sourceTree = "<group>"; };
+		C1E148571E9B2B27004EA701 /* UIDevice+MXRProfiler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+MXRProfiler.m"; sourceTree = "<group>"; };
+		C1E1485E1E9B2B84004EA701 /* MXRUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXRUtility.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -301,10 +301,10 @@
 		5B1E12481E45DA9F000EE40C /* MXRProfiler */ = {
 			isa = PBXGroup;
 			children = (
+				C1E1484A1E9B2B27004EA701 /* Utility */,
 				5B1E12951E48612E000EE40C /* Macros */,
 				5B1E12981E486145000EE40C /* Modules */,
 				5B1E12D91E486166000EE40C /* ProfilerWindow */,
-				5B1E12E31E48627F000EE40C /* Unity */,
 				5B1E124F1E45DA9F000EE40C /* MXRProfilerTool.h */,
 				5B1E12501E45DA9F000EE40C /* MXRProfilerTool.m */,
 				5B1E12941E461ABE000EE40C /* MXRProfiler.h */,
@@ -466,26 +466,6 @@
 				5B1E12E01E486166000EE40C /* MXRProfilerWindowTouchesHandling.h */,
 			);
 			path = ProfilerWindow;
-			sourceTree = "<group>";
-		};
-		5B1E12E31E48627F000EE40C /* Unity */ = {
-			isa = PBXGroup;
-			children = (
-				5BD85A7B1E4C53EC00DB66B5 /* MXRUnity.h */,
-				5B1E12E41E48627F000EE40C /* MXRWeakProxy.h */,
-				5B1E12E51E48627F000EE40C /* MXRWeakProxy.m */,
-				5B1E12E61E48627F000EE40C /* NSObject+MXRSwizz.h */,
-				5B1E12E71E48627F000EE40C /* NSObject+MXRSwizz.m */,
-				5B1E12F01E487C5A000EE40C /* MXRProfilerBaseDBModel.h */,
-				5B1E12F11E487C5A000EE40C /* MXRProfilerBaseDBModel.m */,
-				5B1E12F31E488254000EE40C /* NSObject+MXRBase.h */,
-				5B1E12F41E488254000EE40C /* NSObject+MXRBase.m */,
-				5BD85A751E4BFDF700DB66B5 /* UIDevice+MXRProfiler.h */,
-				5BD85A761E4BFDF700DB66B5 /* UIDevice+MXRProfiler.m */,
-				5BAE3D811E4C61E700C586AE /* MXRDebug.h */,
-				5BAE3D821E4C61E700C586AE /* MXRDebug.m */,
-			);
-			path = Unity;
 			sourceTree = "<group>";
 		};
 		5B58A4751E1A499600713EB8 /* MARTools */ = {
@@ -788,6 +768,26 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		C1E1484A1E9B2B27004EA701 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				C1E1484B1E9B2B27004EA701 /* MXRDebug.h */,
+				C1E1484C1E9B2B27004EA701 /* MXRDebug.m */,
+				C1E1484D1E9B2B27004EA701 /* MXRProfilerBaseDBModel.h */,
+				C1E1484E1E9B2B27004EA701 /* MXRProfilerBaseDBModel.m */,
+				C1E148501E9B2B27004EA701 /* MXRWeakProxy.h */,
+				C1E148511E9B2B27004EA701 /* MXRWeakProxy.m */,
+				C1E148521E9B2B27004EA701 /* NSObject+MXRBase.h */,
+				C1E148531E9B2B27004EA701 /* NSObject+MXRBase.m */,
+				C1E148541E9B2B27004EA701 /* NSObject+MXRSwizz.h */,
+				C1E148551E9B2B27004EA701 /* NSObject+MXRSwizz.m */,
+				C1E148561E9B2B27004EA701 /* UIDevice+MXRProfiler.h */,
+				C1E148571E9B2B27004EA701 /* UIDevice+MXRProfiler.m */,
+				C1E1485E1E9B2B84004EA701 /* MXRUtility.h */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -988,10 +988,12 @@
 				5B1E12CB1E486145000EE40C /* MXRProfilerNavigationViewController.m in Sources */,
 				5B58A48A1E1BEC1E00713EB8 /* MARGlobalManager.m in Sources */,
 				5B0E842F1E1EC2B100F5CEBC /* UINavigationController+MarExtension.m in Sources */,
+				C1E1485D1E9B2B27004EA701 /* UIDevice+MXRProfiler.m in Sources */,
 				8411CE701E53EADD00660B98 /* MXRNetFlowInfo.m in Sources */,
 				5B1E12EE1E4876B1000EE40C /* MXRCallStack.m in Sources */,
 				5B82156E1E1846EB0070BA88 /* ViewController.mm in Sources */,
 				5B0E844D1E218B9000F5CEBC /* NSObject+MarExtension.m in Sources */,
+				C1E148581E9B2B27004EA701 /* MXRDebug.m in Sources */,
 				5B58A4FE1E1EB10A00713EB8 /* MARPrepareAddVehicleViewController.m in Sources */,
 				5B58A4EC1E1D830600713EB8 /* MARHighlightedButton.m in Sources */,
 				5B0E84441E203E7100F5CEBC /* MarReserveParkSpaceViewController.m in Sources */,
@@ -1001,15 +1003,14 @@
 				5B1E12CA1E486145000EE40C /* MXRProfilerBaseViewController.m in Sources */,
 				5B0E84471E203ED600F5CEBC /* MARReserveParkSpaceResultViewController.m in Sources */,
 				84230A2D1E557CAA005D785A /* MXRProfilerNetFlowListViewController.m in Sources */,
-				5B1E12E91E48627F000EE40C /* NSObject+MXRSwizz.m in Sources */,
 				5B1E12C91E486145000EE40C /* UIViewController+MXRProfier.m in Sources */,
 				5B0E84321E1EC40C00F5CEBC /* MARMyVehicleViewController.m in Sources */,
 				5B1E12D71E486145000EE40C /* MXRProfilerStandstillListView.m in Sources */,
 				5B58A4D71E1C15E400713EB8 /* MARLoginViewController.m in Sources */,
 				84CDD2D41E49A45C00ABA137 /* MXRMonitorNetFlow.m in Sources */,
 				8411CE691E52FB9200660B98 /* NSURLSession+MXRProfier.m in Sources */,
+				C1E1485A1E9B2B27004EA701 /* MXRWeakProxy.m in Sources */,
 				5B0E843B1E200CB100F5CEBC /* MARResetPasswordViewController.m in Sources */,
-				5B1E12E81E48627F000EE40C /* MXRWeakProxy.m in Sources */,
 				5B1E12D61E486145000EE40C /* MXRProfilerStandstillDetailViewController.m in Sources */,
 				5B1E12D51E486145000EE40C /* MXRProfilerStandstillDetailView.m in Sources */,
 				5B1E12D11E486145000EE40C /* MXRProfilerSimpleInfoViewController.m in Sources */,
@@ -1024,7 +1025,6 @@
 				5BBAAC4B1E2CFC8600B3A6B8 /* CacheCleanerPlugin.m in Sources */,
 				5B0E843E1E20182B00F5CEBC /* MARVerifyPhoneCodeViewController.m in Sources */,
 				5B82156B1E1846EB0070BA88 /* AppDelegate.mm in Sources */,
-				5B1E12F21E487C5A000EE40C /* MXRProfilerBaseDBModel.m in Sources */,
 				5B1E12C81E486145000EE40C /* MXRProfilerInfo.m in Sources */,
 				5B58A4F71E1E96BB00713EB8 /* MARVehicle.m in Sources */,
 				5B1E12CF1E486145000EE40C /* MXRFPSObserver.m in Sources */,
@@ -1033,20 +1033,21 @@
 				5B0E84531E22565C00F5CEBC /* MARReserveParkspacePopView.m in Sources */,
 				5B58A5041E1EB2C700713EB8 /* MARVehicleDBM.m in Sources */,
 				5B58A4E81E1D5AC600713EB8 /* MARMainViewController.m in Sources */,
-				5BAE3D831E4C61E700C586AE /* MXRDebug.m in Sources */,
 				5B0E84351E1FDFF100F5CEBC /* MARRegisterViewController.m in Sources */,
-				5B1E12F51E488254000EE40C /* NSObject+MXRBase.m in Sources */,
 				84230A301E557CC1005D785A /* MXRProfilerNetFlowListView.m in Sources */,
+				C1E1485C1E9B2B27004EA701 /* NSObject+MXRSwizz.m in Sources */,
 				5B58A4891E1BEC1E00713EB8 /* MARBaseViewController.m in Sources */,
 				5B1E12811E45DA9F000EE40C /* MXRProfilerTool.m in Sources */,
 				5B58A4F01E1E94B600713EB8 /* MARBaseDBModel.m in Sources */,
 				5B8215681E1846EB0070BA88 /* main.m in Sources */,
 				5B1E12D01E486145000EE40C /* MXRProfilerUtils.m in Sources */,
+				C1E148591E9B2B27004EA701 /* MXRProfilerBaseDBModel.m in Sources */,
 				5B58A48B1E1BEC1E00713EB8 /* MARUserDefault.m in Sources */,
 				5BBAAC4C1E2CFC8600B3A6B8 /* RetainCycleLoggerPlugin.m in Sources */,
 				8411CE6D1E53E7BF00660B98 /* MXRNetFlowTest.m in Sources */,
 				5B1E12E21E486166000EE40C /* MXRProfilerWindow.m in Sources */,
 				5B0E84251E1EB99D00F5CEBC /* UIViewController+MarExtension.m in Sources */,
+				C1E1485B1E9B2B27004EA701 /* NSObject+MXRBase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
