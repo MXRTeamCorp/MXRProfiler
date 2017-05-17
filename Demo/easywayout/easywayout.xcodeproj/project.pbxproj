@@ -79,6 +79,7 @@
 		8411CE701E53EADD00660B98 /* MXRNetFlowInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8411CE6F1E53EADD00660B98 /* MXRNetFlowInfo.m */; };
 		84230A2D1E557CAA005D785A /* MXRProfilerNetFlowListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84230A2C1E557CAA005D785A /* MXRProfilerNetFlowListViewController.m */; };
 		84230A301E557CC1005D785A /* MXRProfilerNetFlowListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84230A2F1E557CC1005D785A /* MXRProfilerNetFlowListView.m */; };
+		842CE82D1ECC25100010552D /* MXRProfilerNetFlowCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 842CE82C1ECC25100010552D /* MXRProfilerNetFlowCellView.m */; };
 		84CDD2D41E49A45C00ABA137 /* MXRMonitorNetFlow.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CDD2D31E49A45C00ABA137 /* MXRMonitorNetFlow.m */; };
 		9D42A5812DCF72F776577DB9 /* libPods-easywayout.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F87718C828F83B593E13D9B /* libPods-easywayout.a */; };
 		C1E148581E9B2B27004EA701 /* MXRDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = C1E1484C1E9B2B27004EA701 /* MXRDebug.m */; };
@@ -246,6 +247,8 @@
 		84230A2C1E557CAA005D785A /* MXRProfilerNetFlowListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXRProfilerNetFlowListViewController.m; sourceTree = "<group>"; };
 		84230A2E1E557CC1005D785A /* MXRProfilerNetFlowListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXRProfilerNetFlowListView.h; sourceTree = "<group>"; };
 		84230A2F1E557CC1005D785A /* MXRProfilerNetFlowListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXRProfilerNetFlowListView.m; sourceTree = "<group>"; };
+		842CE82B1ECC25100010552D /* MXRProfilerNetFlowCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXRProfilerNetFlowCellView.h; sourceTree = "<group>"; };
+		842CE82C1ECC25100010552D /* MXRProfilerNetFlowCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXRProfilerNetFlowCellView.m; sourceTree = "<group>"; };
 		84CDD2D21E49A45C00ABA137 /* MXRMonitorNetFlow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXRMonitorNetFlow.h; sourceTree = "<group>"; };
 		84CDD2D31E49A45C00ABA137 /* MXRMonitorNetFlow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXRMonitorNetFlow.m; sourceTree = "<group>"; };
 		BA82C0B845A1DE85CBE9FB90 /* Pods-easywayout.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-easywayout.debug.xcconfig"; path = "Pods/Target Support Files/Pods-easywayout/Pods-easywayout.debug.xcconfig"; sourceTree = "<group>"; };
@@ -753,6 +756,8 @@
 			children = (
 				84230A2E1E557CC1005D785A /* MXRProfilerNetFlowListView.h */,
 				84230A2F1E557CC1005D785A /* MXRProfilerNetFlowListView.m */,
+				842CE82B1ECC25100010552D /* MXRProfilerNetFlowCellView.h */,
+				842CE82C1ECC25100010552D /* MXRProfilerNetFlowCellView.m */,
 				84230A2B1E557CAA005D785A /* MXRProfilerNetFlowListViewController.h */,
 				84230A2C1E557CAA005D785A /* MXRProfilerNetFlowListViewController.m */,
 			);
@@ -995,6 +1000,7 @@
 				5B0E844D1E218B9000F5CEBC /* NSObject+MarExtension.m in Sources */,
 				C1E148581E9B2B27004EA701 /* MXRDebug.m in Sources */,
 				5B58A4FE1E1EB10A00713EB8 /* MARPrepareAddVehicleViewController.m in Sources */,
+				842CE82D1ECC25100010552D /* MXRProfilerNetFlowCellView.m in Sources */,
 				5B58A4EC1E1D830600713EB8 /* MARHighlightedButton.m in Sources */,
 				5B0E84441E203E7100F5CEBC /* MarReserveParkSpaceViewController.m in Sources */,
 				5B58A4911E1BF0A800713EB8 /* SVProgressHUD+MarExtension.m in Sources */,
@@ -1017,7 +1023,6 @@
 				5B1E12E11E486166000EE40C /* MXRProfilerContainerViewController.m in Sources */,
 				5B1E12D41E486145000EE40C /* MXRProfilerStandstillInfo.m in Sources */,
 				5B0E84411E202B4000F5CEBC /* MARLoginModeuleBaseViewController.m in Sources */,
-				5BD85A771E4BFDF700DB66B5 /* UIDevice+MXRProfiler.m in Sources */,
 				5B0E84281E1EBA3200F5CEBC /* MARConstant.m in Sources */,
 				5B1E12D81E486145000EE40C /* MXRProfilerStandstillListViewController.m in Sources */,
 				5B58A49C1E1BF38B00713EB8 /* MARAppDelegate.m in Sources */,

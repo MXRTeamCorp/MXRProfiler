@@ -166,10 +166,11 @@ static const NSUInteger kMXRStandstaillVCHeight = 250;
                 _currentLocationViewController = nil;
                 _simpleInfoViewController      = nil;
                 _netFlowListViewController     = [MXRProfilerNetFlowListViewController new];
-                MXRProfilerNavigationViewController *nav = [[MXRProfilerNavigationViewController alloc] initWithRootViewController:_netFlowListViewController];
+                _netFlowListViewController.delegate = self;
+         
                 _currentLocationViewController = _netFlowListViewController;
-                [_containerViewController presentViewController:nav
-                                                       withSize:[[UIScreen mainScreen] bounds].size];
+                [_containerViewController presentViewController:_netFlowListViewController
+                                                       withSize:CGSizeMake(FLT_MAX, kMXRStandstaillVCHeight)];
             }
             
         }

@@ -10,4 +10,6 @@
 
 @interface MXRProfilerNetFlowListView : UIView
 @property (nonatomic, readonly) UITableView *tableView;
+@property (nonatomic, readonly) UIButton *hiddenButton;
+@property (nonatomic, readonly) UIButton *clearButton;
 @end

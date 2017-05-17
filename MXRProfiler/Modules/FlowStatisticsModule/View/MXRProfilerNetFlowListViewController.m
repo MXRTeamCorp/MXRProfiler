@@ -8,13 +8,16 @@
 
 #import "MXRProfilerNetFlowListViewController.h"
 #import "MXRProfilerNetFlowListView.h"
+#import "MXRProfilerNetFlowCellView.h"
 #import "MXRProfilerInfo.h"
 #import "MXRNetFlowInfo.h"
+#import "MXRProfilerNavigationViewController.h"
 
 @interface MXRProfilerNetFlowListViewController ()<UITableViewDataSource>{
     MXRProfilerNetFlowListView  *_netFlowView;
 }
 @property (nonatomic, strong) NSDateFormatter *dateFormatter;
+
 @end
 
 @implementation MXRProfilerNetFlowListViewController
@@ -25,7 +28,9 @@
     _netFlowView = [MXRProfilerNetFlowListView new];
     _netFlowView.tableView.dataSource = self;
     self.view = _netFlowView;
-    self.view.backgroundColor = [UIColor blackColor];
+    
+    [_netFlowView.hiddenButton addTarget:self action:@selector(hiddenVC:) forControlEvents:UIControlEventTouchUpInside];
+    [_netFlowView.clearButton addTarget:self action:@selector(clearAndReloadData:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)viewDidLoad {
@@ -55,9 +60,28 @@
 {
     if (!_dateFormatter) {
         _dateFormatter = [[NSDateFormatter alloc] init];
-        _dateFormatter.dateFormat = @"yyyy-MM-dd hh:mm:ss.SSS";
+        _dateFormatter.dateFormat = @"hh:mm:ss.SSS";
     }
     return _dateFormatter;
+}
+
+- (void)hiddenVC:(id)sender
+{
+    if ([self.navigationController isKindOfClass:[MXRProfilerNavigationViewController class]]) {
+        MXRProfilerNavigationViewController *vc = ((MXRProfilerNavigationViewController *)self.navigationController);
+        if ([vc.profilerDelegate respondsToSelector:@selector(presentationDelegateChangePresentationModeToMode:)]) {
+            [vc.profilerDelegate presentationDelegateChangePresentationModeToMode:MXRProfilerPresentationMode_SimpleInfo];
+        }
+    }
+    else if ([_delegate respondsToSelector:@selector(presentationDelegateChangePresentationModeToMode:)]) {
+        [_delegate presentationDelegateChangePresentationModeToMode:MXRProfilerPresentationMode_SimpleInfo];
+    }
+}
+
+- (void)clearAndReloadData:(id)sender
+{
+    [MXRPROFILERINFO.netFlowInfos removeAllObjects];
+    [_netFlowView.tableView reloadData];
 }
 
 
@@ -71,11 +95,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *cellIdentifier = @"cellIdentifier";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    MXRProfilerNetFlowCellView *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellIdentifier];
-        cell.textLabel.font = [UIFont systemFontOfSize:10.f];
-        cell.detailTextLabel.font = [UIFont systemFontOfSize:10.f];
+        cell = [[MXRProfilerNetFlowCellView alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellIdentifier];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     NSInteger index = indexPath.row;
@@ -83,8 +105,8 @@
     if (index < MXRPROFILERINFO.netFlowInfos.count) {
         netFlowInfo = MXRPROFILERINFO.netFlowInfos[index];
     }
-    cell.textLabel.text = netFlowInfo.currentVCClassName;
-    cell.detailTextLabel.text = [self.dateFormatter stringFromDate:[NSDate dateWithTimeIntervalSince1970:netFlowInfo.happendTimeIntervalSince1970]];
+    [cell setData:netFlowInfo];
+   
     return cell;
 }
 

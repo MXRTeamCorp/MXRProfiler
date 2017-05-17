@@ -7,7 +7,10 @@
 //
 
 #import "MXRProfilerBaseViewController.h"
+#import "MXRProfilerMovableViewController.h"
+#import "MXRProfilerPresentationModeDelegate.h"
 
-@interface MXRProfilerNetFlowListViewController : MXRProfilerBaseViewController
+@interface MXRProfilerNetFlowListViewController : MXRProfilerBaseViewController<MXRProfilerMovableViewController>
 
+@property (nonatomic, weak) id<MXRProfilerPresentationModeDelegate> delegate;
 @end
